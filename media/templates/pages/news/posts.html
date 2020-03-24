@@ -1,0 +1,114 @@
+{% extends 'shared/_site.html' %}
+
+{% block body %}
+<!-- Content -->
+<section id="page-content" class="sidebar-left">
+    <div class="container">
+        <div class="row">
+            <!-- post content -->
+            <div class="content col-lg-9">
+                <!-- Page title -->
+                <div class="page-title">
+                    <h1>{{ view.page_name }}</h1>
+                    <div class="breadcrumb float-left">
+                        <ul>
+                            <li><a href="#">Home</a>
+                            </li>
+                            <li class="active"><a href="#">{{ view.page_name }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end: Page title -->
+                <!-- Blog -->
+                <div id="blog">
+                    {% for post in posts %}
+                        <!-- Post item-->
+                        <div class="post-item">
+                            <div class="post-item-wrap">
+                                <div class="post-image">
+                                    <a href="#">
+                                        <img alt="" src="images/blog/12.jpg">
+                                    </a>
+                                    <span class="post-meta-category"><a href="">{{ post.category.title }}</a></span>
+                                </div>
+                                <div class="post-item-description">
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.created }}</span>
+                                    <h2><a href="#">{{ post.title }}</a></h2>
+                                    <p>{{ post.summary }}</p>
+                                    <a href="#" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end: Post item-->
+                    {% endfor %}
+                </div>
+                <!-- end: Blog -->
+                <!-- Pagination -->
+                <!-- <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul> -->
+                <!-- end: Pagination -->
+            </div>
+            <!-- end: post content -->
+            
+            <!-- Sidebar-->
+            <div class="sidebar sticky-sidebar col-lg-3">
+                
+                <!--Tabs with Posts-->
+                <div class="widget ">
+                    <h4 class="widget-title">Recent Posts</h4>
+                    <div class="post-thumbnail-list">
+                        {% for post in recent_posts %}
+                        <div class="post-thumbnail-entry">
+                            <img alt="" src="{{ post.thumbnail.url }}">
+                            <div class="post-thumbnail-content">
+                                <a href="#">{{ post.title }}</a>
+                                <!-- <span class="post-date"><i class="icon-clock"></i> 6m ago</span> -->
+                                <!-- <span class="post-category"><i class="fa fa-tag"></i> Technology</span> -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!--End: Tabs with Posts-->
+
+                <!--widget tags -->
+                <div class="widget  widget-tags">
+                    <h4 class="widget-title">Tags</h4>
+                    <div class="tags">
+                        {% for tag in tags %}
+                            <a href="#">{{ tag.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!--end: widget tags -->
+                
+                <!--widget newsletter-->
+                <div class="widget  widget-newsletter">
+                    <form class="widget-subscribe-form" novalidate action="include/subscribe-form.php" role="form"
+                        method="post">
+                        <h4 class="widget-title">Newsletter</h4>
+                        <small>Stay informed on our latest news!</small>
+                        <div class="input-group">
+                            <input type="email" required name="widget-subscribe-form-email"
+                                class="form-control required email" placeholder="Enter your Email">
+                            <span class="input-group-btn">
+                                <button type="submit" id="widget-subscribe-submit-button" class="btn"><i
+                                        class="fa fa-paper-plane"></i></button>
+                            </span> </div>
+                    </form>
+                </div>
+                <!--end: widget newsletter-->
+            </div>
+            <!-- end: Sidebar-->
+        </div>
+    </div>
+</section> <!-- end: Content -->
+{% endblock %}

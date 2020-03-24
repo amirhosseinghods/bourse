@@ -1,0 +1,81 @@
+{% load static %}
+<!-- Contact -->
+<section class="p-t-150 p-b-200"
+    style="background-image:url({% static 'site/images/background-4.png' %}); background-position:71% 22%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="m-b-10">با ما در تماس باشید</h2>
+                        <p class="lead">همیشه آماده برای پاسخگویی به شما دوستان عزیز هستیم</p>
+                    </div>
+                    <div class="col-lg-6 m-b-30">
+                        <address>
+                            {{ contact.address }}
+                        </address>
+                        <strong>Phone:</strong> {{ contact.phone }}
+                        <br>
+                        <strong>Fax:</strong> {{ contact.fax }}
+                        <br>
+                        <strong>Email:</strong> {{ contact.email }}
+                    </div>
+                    <div class="col-lg-12 m-b-30">
+                        <h4>شبکه های اجتماعی ما</h4>
+                        <div class="social-icons social-icons-light social-icons-colored-hover">
+                            <ul>
+                                <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
+                                <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li class="social-instagram"><a href="#"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                                <li class="social-gplus"><a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li class="social-dribbble"><a href="#"><i class="fab fa-dribbble"></i></a>
+                                </li>
+                                <li class="social-skype"><a href="#"><i class="fab fa-skype"></i></a></li>
+                                <li class="social-linkedin"><a href="#"><i class="fab fa-linkedin"></i></a>
+                                </li>
+                                <li class="social-behance"><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li class="social-flickr"><a href="#"><i class="fab fa-flickr"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-1">
+                <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form"
+                    method="post">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">نام</label>
+                            <input type="text" aria-required="true" required name="widget-contact-form-name"
+                                class="form-control required name" placeholder="نام خود را وارد نمایید">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">ایمیل</label>
+                            <input type="email" aria-required="true" required name="widget-contact-form-email"
+                                class="form-control required email" placeholder="ایمیل خود را وارد نمایید">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">پیام</label>
+                        <textarea type="text" required name="widget-contact-form-message" rows="8"
+                            class="form-control required" placeholder="پیام خود را بنویسید"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-light" type="submit" id="form-submit"><i
+                                class="fa fa-paper-plane"></i> ارسال پیام</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end: Contact -->

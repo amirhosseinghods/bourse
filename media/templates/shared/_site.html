@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" type="image/png" href="#" />
+
+    {% block seo %}
+    {% endblock %}
+    <!-- <meta name="description" content="#" />
+    <meta name="keywords" content="#" /> -->
+    
+    <title>اسمارت بورس | {{ view.page_name }}</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="{% static 'site/css/plugins.css' %}" rel="stylesheet" />
+    <link href="{% static 'site/css/style.css' %}" rel="stylesheet" />
+    <!-- <link href="{% static 'site/css/rtl.css' %}" rel="stylesheet" /> -->
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <!-- Body Inner -->
+    <div class="body-inner">
+            <!-- Body Inner -->
+
+        <!-- Header -->
+        <header id="header" data-transparent="true" data-fullwidth="true">
+            <div class="header-inner">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo"> <a href="#"><span class="logo-default">POLO</span><span class="logo-dark">POLO</span></a> </div>
+                    <!--End: Logo-->                   
+                    {% include 'partials/nav.html' %}
+                </div>
+            </div>
+        </header>
+        <!-- end: Header -->
+
+
+        {% block body %}
+        {% endblock %}
+        
+
+        
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">&copy; 2019 SmartBourse - تمامی حق و حقوق این سایت محفوظ می باشد. </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end: Footer -->
+
+    </div>
+    <!-- end: Body Inner -->
+
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    <script src="{% static 'site/js/jquery.js' %}"></script>
+    <script src="{% static 'site/js/plugins.js' %}"></script>
+    <script src="{% static 'site/js/functions.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

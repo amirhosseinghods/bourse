@@ -1,0 +1,351 @@
+{% extends 'shared/_site.html' %}
+
+{% block body %}
+<!-- Shop products -->
+<section id="page-content" class="sidebar-left">
+    <div class="container">
+        <div class="row">
+            <!-- Content-->
+            <div class="content col-lg-9">
+                <div class="product">
+                    <div class="row m-b-40">
+                        <div class="col-lg-5">
+                            <div class="product-image">
+                                <!-- Carousel slider -->
+                                <div class="carousel dots-inside dots-dark arrows-visible" data-items="1"
+                                    data-loop="true" data-autoplay="true" data-animate-in="fadeIn"
+                                    data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
+                                    <a href="{{ product.picture.url }}" data-lightbox="image"
+                                        title="{{ product.title }}"><img alt="{{ product.title }}"
+                                            src="{{ product.thumbnail.url }}">
+                                    </a>
+                                    <a href="{{ product.picture.url }}" data-lightbox="image"
+                                        title="{{ product.title }}"><img alt="{{ product.title }}"
+                                            src="{{ product.thumbnail.url }}">
+                                    </a>
+                                </div>
+                                <!-- Carousel slider -->
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="product-description">
+                                <div class="product-category">{{ product.category }}</div>
+                                <div class="product-title">
+                                    <h3><a href="#">{{ product.title }} </a></h3>
+                                </div>
+                                <div class="product-price"><ins>{{ product.price }} {{ product.unit_price }}</ins>
+                                </div>
+                                <div class="product-rate">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                                <div class="product-reviews"><a href="#">3 نظر مشتری</a>
+                                </div>
+                                <div class="seperator m-b-10"></div>
+                                <p>{{ product.summary }}</p>
+                                <div class="product-meta">
+                                    <p>برچسب ها:
+                                        {% for tag in product.tags.all %}
+                                        <a href="#" rel="{{ tag.title }}">{{ tag.title }}</a>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                                <div class="seperator m-t-20 m-b-10"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h6>انتخاب تعداد</h6>
+                                    <div class="cart-product-quantity">
+                                        <div class="quantity m-l-5">
+                                            <input type="button" class="minus" value="-">
+                                            <input type="text" class="qty" value="1">
+                                            <input type="button" class="plus" value="+">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h6>سبد خرید</h6>
+                                    <a class="btn" href="#"><i class="icon-shopping-cart"></i> اضافه کردن به سبد
+                                        خرید</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product additional tabs -->
+                    <div class="tabs tabs-folder">
+                        <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home3" role="tab"
+                                    aria-controls="home" aria-selected="false"><i
+                                        class="fa fa-align-justify"></i>توضیحات</a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile3" role="tab"
+                                    aria-controls="profile" aria-selected="true"><i
+                                        class="fa fa-info"></i>مشخصات</a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact3" role="tab"
+                                    aria-controls="contact" aria-selected="false"><i
+                                        class="fa fa-star"></i>نظرات</a></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent3">
+                            <div class="tab-pane fade" id="home3" role="tabpanel" aria-labelledby="home-tab">
+                                <p>{{ product.description | safe }}</p>
+                            </div>
+                            <div class="tab-pane fade active show" id="profile3" role="tabpanel"
+                                aria-labelledby="profile-tab">
+                                <table class="table table-striped table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>قیمت</td>
+                                            <td>{{ product.price }} {{ product.unit_price }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>سطح دوره</td>
+                                            <td>{{ product.level }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>وضعیت دوره</td>
+                                            <td>{{ product.status }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>طول دوره</td>
+                                            <td>{{ product.duration }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>مدرس دوره</td>
+                                            <td>{{ product.teacher }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>تاریخ ثبت دوره</td>
+                                            <td>{{ product.created }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>تعداد قسمت</td>
+                                            <td>{{ product.tutorials }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="comments" id="comments">
+                                    <div class="comment_number">
+                                        نظرات <span>(3)</span>
+                                    </div>
+                                    <div class="comment-list">
+                                        <!-- Comment -->
+                                        <div class="comment" id="comment-1">
+                                            <div class="image"><img alt="" src="images/blog/author.jpg" class="avatar">
+                                            </div>
+                                            <div class="text">
+                                                <div class="product-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                                <h5 class="name">John Doe</h5>
+                                                <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                                <a class="comment-reply-link" href="#">Reply</a>
+                                                <div class="text_holder">
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and
+                                                        typesetting industry. Lorem Ipsum has been the
+                                                        industry's standard dummy text ever since the 1500s.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end: Comment -->
+                                        <!-- Comment -->
+                                        <div class="comment" id="comment-1-1">
+                                            <div class="image"><img alt="" src="images/blog/author2.jpg" class="avatar">
+                                            </div>
+                                            <div class="text">
+                                                <div class="product-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                                <h5 class="name">John Doe</h5>
+                                                <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                                <a class="comment-reply-link" href="#">Reply</a>
+                                                <div class="text_holder">
+                                                    <p>It is a long established fact that a reader will be
+                                                        distracted by the readable content.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end: Comment -->
+                                        <!-- Comment -->
+                                        <div class="comment" id="comment-1-2">
+                                            <div class="image"><img alt="" src="images/blog/author3.jpg" class="avatar">
+                                            </div>
+                                            <div class="text">
+                                                <div class="product-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                                <h5 class="name">John Doe</h5>
+                                                <span class="comment_date">Posted at 15:32h, 06 December</span>
+                                                <a class="comment-reply-link" href="#">Reply</a>
+                                                <div class="text_holder">
+                                                    <p>There are many variations of passages of Lorem Ipsum
+                                                        available, but the majority have suffered alteration in
+                                                        some form, by injected humour.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end: Comment -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: Product additional tabs -->
+                </div>
+                <div class="heading-text heading-line text-center">
+                    <h4>محصولات مرتبطی که شما ممکن است علاقه مند باشید</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="widget-shop">
+                            {% for prod in related_products %}
+                            <div class="product">
+                                <div class="product-image">
+                                    <a href="#"><img src="{{ product.thumbnail.url }}" alt="{{ product.title }}">
+                                    </a>
+                                </div>
+                                <div class="product-description">
+                                    <div class="product-category">{{ product.category }}</div>
+                                    <div class="product-title">
+                                        <h3><a href="#">{{ product.title }}</a></h3>
+                                    </div>
+                                    <div class="product-price"><ins>{{ product.price }} {{ product.unit_price }}</ins>
+                                    </div>
+                                    <div class="product-rate">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end: Content-->
+            <!-- Sidebar-->
+            <div class="sidebar col-lg-3">
+                <!--widget newsletter-->
+                <div class="widget clearfix widget-archive">
+                    <h4 class="widget-title">دسته بندی محصولات</h4>
+                    <ul class="list list-lines">
+                        {% for category in categories %}
+                        <li>
+                            <a href="#">{{ category.tutorials }}</a> <span
+                                class="count">{{ category.tutorials|length }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="widget clearfix widget-shop">
+                    <h4 class="widget-title">محصولات اخیر</h4>
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="#"><img src="{{ product.thumbnail.url }}" alt="{{ product.title }}">
+                            </a>
+                        </div>
+                        <div class="product-description">
+                            <div class="product-category">{{ product.category.title }}</div>
+                            <div class="product-title">
+                                <h3><a href="#">{{ product.title }}</a></h3>
+                            </div>
+                            <div class="product-price"><ins>{{ product.price }} {{ product.unit_price }}</ins>
+                            </div>
+                            <div class="product-rate">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget clearfix widget-tags">
+                    <h4 class="widget-title">برچسب محصولات</h4>
+                    <div class="tags">
+                        {% for tag in tags %}
+                        <a href="#">{{ tag.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="widget clearfix widget-newsletter">
+                    <form class="form-inline" method="get" action="#">
+                        <h4 class="widget-title">اشتراک رایگان خبرگذاری آموزش ها</h4>
+                        <small>با اشتراک گذاری بخش آموزشگاه از آخرین آموزش ها و تخفیف ها اولین باشید که با خبر می
+                            شوید.</small>
+                        <div class="input-group">
+                            <input type="email" placeholder="ایمیل خود را وارد کنید" class="form-control required email"
+                                name="widget-subscribe-form-email" aria-required="true">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- end: Sidebar-->
+        </div>
+    </div>
+</section>
+<!-- end: Shop products -->
+<!-- DELIVERY INFO -->
+<section class="background-grey p-t-40 p-b-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-gift"></i></a>
+                    </div>
+                    <h3>ارسال رایگان برای قیمت های بالاتر از 100 تومان</h3>
+                    <p>سفارش های بالاتر از صد هزار تومان با ارسال رایگان همراه خواهد بود.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-plane"></i></a>
+                    </div>
+                    <h3>پست پیشتاز</h3>
+                    <p>ارسال در کمتر ازسه روز انجام می شود.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-history"></i></a>
+                    </div>
+                    <h3>تا 60 روز گارانتی بازگشت محصول</h3>
+                    <p>از محصول ما خوشتان نیامد؟ می توانید حداکثر تا 60 روز آینده آن را برگردانید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end: DELIVERY INFO -->
+{% endblock %}

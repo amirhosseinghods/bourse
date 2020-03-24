@@ -1,0 +1,87 @@
+{% extends 'shared/_site.html' %}
+{% load static %}
+
+{% block body %}
+{% include 'partials/banner.html' %}
+{% include 'partials/about.html' %}
+{% include 'partials/news.html' %}
+{% include 'partials/what-we-do.html' %}
+{% include 'partials/posts.html' %}
+{% include 'partials/get-in-touch.html' %}
+{% include 'partials/subscribe.html' %}
+{% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="{% static 'site/plugins/slider-revolution/css/settings.css' %}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{% static 'site/plugins/slider-revolution/css/layers.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'site/plugins/slider-revolution/css/navigation.css' %}">
+
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'site/plugins/slider-revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+
+<script type="text/javascript">
+    var tpj = jQuery;
+
+    var revapi21;
+    tpj(document).ready(function () {
+        if (tpj("#rev_slider_21_1").revolution == undefined) {
+            revslider_showDoubleJqueryError("#rev_slider_21_1");
+        } else {
+            revapi21 = tpj("#rev_slider_21_1").show().revolution({
+                sliderType: "standard",
+                jsFileLocation: "plugins/slider-revolution/js/",
+                sliderLayout: "fullscreen",
+                dottedOverlay: "none",
+                delay: 9000,
+                navigation: {
+                    onHoverStop: "off",
+                },
+                responsiveLevels: [1240, 1024, 778, 480],
+                visibilityLevels: [1240, 1024, 778, 480],
+                gridwidth: [1240, 1024, 778, 480],
+                gridheight: [868, 768, 960, 720],
+                lazyType: "none",
+                parallax: {
+                    type: "mouse",
+                    origo: "slidercenter",
+                    speed: 700,
+                    levels: [2, 6, 10, 20, 25, 30, 35, 40, 45, 50, 47, 48, 49, 50, 51, 55],
+                    type: "mouse",
+                    disable_onmobile: "on"
+                },
+                shadow: 0,
+                spinner: "spinner0",
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+                shuffle: "off",
+                autoHeight: "off",
+                fullScreenAutoWidth: "off",
+                fullScreenAlignForce: "off",
+                fullScreenOffsetContainer: "",
+                fullScreenOffset: "",
+                disableProgressBar: "on",
+                hideThumbsOnMobile: "off",
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                debugMode: false,
+                fallbacks: {
+                    simplifyAll: "off",
+                    nextSlideOnWindowFocus: "off",
+                    disableFocusListener: false,
+                }
+            });
+        }
+    }); /*ready*/
+</script>
+{% endblock %}

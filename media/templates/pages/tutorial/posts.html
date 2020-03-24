@@ -1,0 +1,224 @@
+{% extends 'shared/_site.html' %}
+
+{% block body %}
+
+<!-- Page title -->
+<section id="page-title">
+    <div class="container">
+        <div class="page-title">
+            <h1>آموزشگاه</h1>
+            <span>فروشگاه</span>
+        </div>
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="#">خانه</a>
+                </li>
+                <li class="active">
+                    <a href="#">آموزشگاه</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end: Page title -->
+<!-- Shop products -->
+<section id="page-content" class="sidebar-left">
+    <div class="container">
+        <div class="row">
+            <!-- Content-->
+            <div class="content col-lg-9">
+                <div class="row m-b-20">
+                    <div class="col-lg-6 p-t-10 m-b-20">
+                        <h3 class="m-b-20">آموزش دوره های تلیل بورس</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="order-select">
+                            <h6>مرتب کن به وسیله</h6>
+                            <p>نمایش 1&ndash;12 از 25 نتیجه</p>
+                            <form method="get">
+                                <select class="form-control">
+                                    <option selected="selected" value="order">پیشرفرض</option>
+                                    <option value="popularity">بر اساس محبوبیت</option>
+                                    <option value="rating">بر اساس رتبه بندی</option>
+                                    <option value="date">بر اساس جدید بودن</option>
+                                    <option value="price">بر اساس قیمت: بالا به پایین</option>
+                                    <option value="price-desc">بر اساس قیمت: پایین به بالا</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="order-select">
+                            <h6>مرتب کردن بر اساس قیمت</h6>
+                            <p>بازه میان 0 - 190$</p>
+                            <form method="get">
+                                <select class="form-control">
+                                    <option selected="selected" value="">0$ - 50$</option>
+                                    <option value="">51$ - 90$</option>
+                                    <option value="">91$ - 120$</option>
+                                    <option value="">121$ - 200$</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--Product list-->
+                <div class="shop">
+                    <div class="grid-layout grid-3-columns" data-item="grid-item">
+                        {% for product in tutorials %}
+                            <div class="grid-item">
+                                <div class="product">
+                                    <div class="product-image">
+                                        <a href="#"><img alt="{{ product.title }}" src="{{ product.thumbnial.url }}">
+                                        </a>
+                                        <a href="#"><img alt="{{ product.title }}" src="{{ product.picture.url }">
+                                        </a>
+                                        <span class="product-new">جدید</span>
+                                        <span class="product-wishlist">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </span>
+                                        <div class="product-overlay">
+                                            <a href="shop-product-ajax-page.html" data-lightbox="ajax">نمایش سریع</a>
+                                        </div>
+                                    </div>
+                                    <div class="product-description">
+                                        <div class="product-category">{{ product.category.title }}</div>
+                                        <div class="product-title">
+                                            <h3><a href="#">{{ product.title }}</a></h3>
+                                        </div>
+                                        <div class="product-price"><ins>{{ product.price }} {{ product.unit_price }}</ins>
+                                        </div>
+                                        <div class="product-rate">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                        <div class="product-reviews"><a href="#">6 نظر مشتری</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                        
+                    <hr>
+                    <!-- Pagination -->
+                    <!-- <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i
+                                    class="fa fa-angle-right"></i></a></li>
+                    </ul> -->
+                    <!-- end: Pagination -->
+                </div>
+                <!--End: Product list-->
+            </div>
+            <!-- end: Content-->
+            <!-- Sidebar-->
+            <div class="sidebar col-lg-3">
+                <!--widget newsletter-->
+                <div class="widget clearfix widget-archive">
+                    <h4 class="widget-title">دسته بندی محصولات</h4>
+                    <ul class="list list-lines">
+                        {% for category in categories %}
+                            <li>
+                                <a href="#">{{ category.tutorials }}</a> <span class="count">{{ category.tutorials.count }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="widget clearfix widget-shop">
+                    <h4 class="widget-title">محصولات اخیر</h4>
+                    <div class="product">
+                        <div class="product-image">
+                            <a href="#"><img src="{{ product.thumbnail.url }}" alt="{{ product.title }}">
+                            </a>
+                        </div>
+                        <div class="product-description">
+                            <div class="product-category">{{ product.category.title }}</div>
+                            <div class="product-title">
+                                <h3><a href="#">{{ product.title }}</a></h3>
+                            </div>
+                            <div class="product-price"><ins>{{ product.price }} {{ product.unit_price }}</ins>
+                            </div>
+                            <div class="product-rate">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget clearfix widget-tags">
+                    <h4 class="widget-title">برچسب محصولات</h4>
+                    <div class="tags">
+                        {% for tag in tags %}
+                            <a href="#">{{ tag.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="widget clearfix widget-newsletter">
+                    <form class="form-inline" method="get" action="#">
+                        <h4 class="widget-title">اشتراک رایگان خبرگذاری آموزش ها</h4>
+                        <small>با اشتراک گذاری بخش آموزشگاه از آخرین آموزش ها و تخفیف ها اولین باشید که با خبر می شوید.</small>
+                        <div class="input-group">
+                            <input type="email" placeholder="ایمیل خود را وارد کنید" class="form-control required email" name="widget-subscribe-form-email" aria-required="true">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- end: Sidebar-->
+        </div>
+    </div>
+</section>
+<!-- end: Shop products -->
+<!-- DELIVERY INFO -->
+<section class="background-grey p-t-40 p-b-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-gift"></i></a>
+                    </div>
+                    <h3>ارسال رایگان برای قیمت های بالاتر از 100 تومان</h3>
+                    <p>سفارش های بالاتر از صد هزار تومان با ارسال رایگان همراه خواهد بود.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-plane"></i></a>
+                    </div>
+                    <h3>پست پیشتاز</h3>
+                    <p>ارسال در کمتر ازسه روز انجام می شود.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="icon-box effect small clean">
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-history"></i></a>
+                    </div>
+                    <h3>تا 60 روز گارانتی بازگشت محصول</h3>
+                    <p>از محصول ما خوشتان نیامد؟ می توانید حداکثر تا 60 روز آینده آن را برگردانید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end: DELIVERY INFO -->
+
+{% endblock %}

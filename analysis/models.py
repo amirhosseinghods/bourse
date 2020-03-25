@@ -30,7 +30,7 @@ class AnalyzePost(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(AnalyzePost, self).save(*args, **kwargs)
 
 
@@ -51,7 +51,7 @@ class AnalyzeCategory(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(AnalyzeCategory, self).save(*args, **kwargs)
 
 class AnalyzeTag(models.Model):
@@ -71,7 +71,7 @@ class AnalyzeTag(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(AnalyzeTag, self).save(*args, **kwargs)
 
 class AnalyzeComment(models.Model):

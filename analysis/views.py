@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.utils.translation import ugettext_lazy as _
 
 class AnalyzeView(TemplateView):
-    template_name = 'pages/tutorial/posts.html'
+    template_name = 'pages/analyze/posts.html'
     page_name = _('تحلیل بورس')
 
     def get_context_data(self, **kwargs):
@@ -12,7 +12,7 @@ class AnalyzeView(TemplateView):
         return context
 
 class SingleAnalyzeView(TemplateView):
-    template_name = 'pages/tutorial/post.html'
+    template_name = 'pages/analyze/post.html'
     page_name = _('پست تحلیل بورس')
 
     def get_context_data(self, **kwargs):

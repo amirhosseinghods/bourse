@@ -12,7 +12,7 @@ class AnalyzePost(models.Model):
     
     height_field = models.SmallIntegerField(_("Height Field"), editable = False)
     width_field = models.SmallIntegerField(_("Width Field"), editable = False)
-    picture = models.ImageField(_("Picture"), upload_to='site/blog', height_field=height_field, width_field=width_field, max_length=254, help_text = _('picture size: 525x350'))
+    picture = models.ImageField(_("Picture"), upload_to='site/blog', height_field='height_field', width_field='width_field', max_length=254, help_text = _('picture size: 525x350'))
     author = models.ForeignKey(User, verbose_name=_("Author"), related_name = 'ana_posts', on_delete=models.PROTECT)
     category = models.ForeignKey('AnalyzeCategory', verbose_name=_("AnalyzeCategory"), related_name = 'ana_posts', on_delete=models.PROTECT)
     tags = models.ManyToManyField('AnalyzeTag', verbose_name=_("AnalyzePosts"))

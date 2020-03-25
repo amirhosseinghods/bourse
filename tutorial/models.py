@@ -17,7 +17,7 @@ class TutorialPost(models.Model):
     )
 
     title = models.CharField(_("Title"), db_index=True, max_length=120)
-    slug = models.SlugField(_("Slug"), db_index=True, max_length=140)
+    slug = models.SlugField(_("Slug"), db_index=True, max_length=140, editable = False)
     summary = models.CharField(_("Summary"), max_length=254)
 
     content = RichTextUploadingField(_("Content"))
@@ -50,7 +50,7 @@ class TutorialPost(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialPost, self).save(*args, **kwargs)
 
 class TutorialPicture(models.Model):
@@ -69,7 +69,7 @@ class TutorialPicture(models.Model):
     title = models.CharField(_("Title"), max_length=120)
     height_field = models.SmallIntegerField(_("Height Field"))
     width_field = models.SmallIntegerField(_("Width Field"))
-    picture = models.ImageField(_("Picture"), upload_to=tutorial_directory_path, height_field=height_field, width_field=width_field, max_length=254, validators=[FileExtensionValidator(['jpg', 'png'])], help_text = _('picture size: 525x350'))
+    picture = models.ImageField(_("Picture"), upload_to=tutorial_directory_path, height_field='height_field', width_field='width_field', max_length=254, validators=[FileExtensionValidator(['jpg', 'png'])], help_text = _('picture size must be: 525x350'))
     standard_size = models.CharField(_("Standard Size"), choices = STANDARD_SIZES, max_length = 10)
 
     tutorial = models.ForeignKey("TutorialPost", verbose_name=_("Tutorial Post"), related_name='pictures', on_delete=models.CASCADE)
@@ -109,7 +109,7 @@ class TutorialMovie(models.Model):
 
 class TutorialCategory(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -122,12 +122,12 @@ class TutorialCategory(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialCategory, self).save(*args, **kwargs)
 
 class TutorialTag(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -140,12 +140,12 @@ class TutorialTag(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialTag, self).save(*args, **kwargs)
 
 class TutorialBadge(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -158,12 +158,12 @@ class TutorialBadge(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialBadge, self).save(*args, **kwargs)
 
 class TutorialStatus(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -176,7 +176,7 @@ class TutorialStatus(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialStatus, self).save(*args, **kwargs)
 
 class TutorialLevel(models.Model):
@@ -194,7 +194,7 @@ class TutorialLevel(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.title, allow_unicode=True)
         super(TutorialLevel, self).save(*args, **kwargs)
 
 class TutorialReview(models.Model):

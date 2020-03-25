@@ -61,6 +61,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+ALLOW_UNICODE_SLUGS = True
+
 
 # ######################### #
 #         CKEDITOR          #

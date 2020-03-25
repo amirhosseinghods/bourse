@@ -1,14 +1,19 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class AnalyzePost(models.Model):
     """Model definition for AnalyzePosts."""
 
-    title = models.CharField(_("Title"), max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
+    title = models.CharField(_("Title"), db_index=True, max_length=120)
+    slug = models.SlugField(_("Slug"), db_index=True, max_length=140, editable = False, allow_unicode=True)
     summary = models.CharField(max_length=254)
+    content = RichTextUploadingField(_("Content"))
     
     height_field = models.SmallIntegerField(_("Height Field"), editable = False)
     width_field = models.SmallIntegerField(_("Width Field"), editable = False)
@@ -22,8 +27,10 @@ class AnalyzePost(models.Model):
 
     class Meta:
         """Meta definition for Analyze Post."""
-        verbose_name = 'Analyze Post'
-        verbose_name_plural = 'Analyze Posts'
+        verbose_name = _('Analyze Post')
+        verbose_name_plural = _('Analyze Posts')
+        index_together = (('id', 'slug'))
+        ordering = ('-created',)
 
     def __str__(self):
         """Unicode representation of Analyze Posts."""
@@ -33,6 +40,8 @@ class AnalyzePost(models.Model):
         self.slug = slugify(self.title, allow_unicode=True)
         super(AnalyzePost, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('pages:post', kwargs={'slug': self.slug})
 
 class AnalyzeCategory(models.Model):
     """Model definition for AnalyzeCategory."""

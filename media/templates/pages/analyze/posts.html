@@ -1,5 +1,7 @@
 {% extends 'shared/_site.html' %}
 
+{% load static %}
+
 {% block body %}
 <!-- Content -->
 <section id="page-content" class="sidebar-left">
@@ -12,7 +14,7 @@
                     <h1>{{ view.page_name }}</h1>
                     <div class="breadcrumb float-left">
                         <ul>
-                            <li><a href="#">Home</a>
+                            <li><a href="{% url 'pages:home' %}">Home</a>
                             </li>
                             <li class="active"><a href="#">{{ view.page_name }}</a>
                             </li>
@@ -28,7 +30,7 @@
                             <div class="post-item-wrap">
                                 <div class="post-image">
                                     <a href="#">
-                                        <img alt="" src="images/blog/12.jpg">
+                                        <img alt="{{ post.title }}" src="{{ post.picture.url }}">
                                     </a>
                                     <span class="post-meta-category"><a href="">{{ post.category.title }}</a></span>
                                 </div>
@@ -36,7 +38,7 @@
                                     <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.created }}</span>
                                     <h2><a href="#">{{ post.title }}</a></h2>
                                     <p>{{ post.summary }}</p>
-                                    <a href="#" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+                                    <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">Read More <i class="icon-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>

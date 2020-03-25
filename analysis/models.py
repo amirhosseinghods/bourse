@@ -7,14 +7,15 @@ class AnalyzePost(models.Model):
     """Model definition for AnalyzePosts."""
 
     title = models.CharField(_("Title"), max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
     summary = models.CharField(max_length=254)
     
-    height_field = models.SmallIntegerField(_("Height Field"))
-    width_field = models.SmallIntegerField(_("Width Field"))
+    height_field = models.SmallIntegerField(_("Height Field"), editable = False)
+    width_field = models.SmallIntegerField(_("Width Field"), editable = False)
     picture = models.ImageField(_("Picture"), upload_to='site/blog', height_field=height_field, width_field=width_field, max_length=254, help_text = _('picture size: 525x350'))
     author = models.ForeignKey(User, verbose_name=_("Author"), related_name = 'ana_posts', on_delete=models.PROTECT)
     category = models.ForeignKey('AnalyzeCategory', verbose_name=_("AnalyzeCategory"), related_name = 'ana_posts', on_delete=models.PROTECT)
+    tags = models.ManyToManyField('AnalyzeTag', verbose_name=_("AnalyzePosts"))
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -37,7 +38,7 @@ class AnalyzeCategory(models.Model):
     """Model definition for AnalyzeCategory."""
 
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -57,8 +58,7 @@ class AnalyzeTag(models.Model):
     """Model definition for Tag."""
 
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
-    posts = models.ManyToManyField(AnalyzePost, verbose_name=_("AnalyzePosts"))
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)

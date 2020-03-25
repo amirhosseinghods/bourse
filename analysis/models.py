@@ -15,7 +15,7 @@ class AnalyzePost(models.Model):
     picture = models.ImageField(_("Picture"), upload_to='site/blog', height_field='height_field', width_field='width_field', max_length=254, help_text = _('picture size: 525x350'))
     author = models.ForeignKey(User, verbose_name=_("Author"), related_name = 'ana_posts', on_delete=models.PROTECT)
     category = models.ForeignKey('AnalyzeCategory', verbose_name=_("AnalyzeCategory"), related_name = 'ana_posts', on_delete=models.PROTECT)
-    tags = models.ManyToManyField('AnalyzeTag', verbose_name=_("AnalyzePosts"))
+    tags = models.ManyToManyField('AnalyzeTag', verbose_name=_("Analyze Tags"))
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)

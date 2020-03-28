@@ -1,0 +1,98 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="icon" type="image/png" href="#" />
+
+    <!-- <meta name="description" content="#" />
+    <meta name="keywords" content="#" /> -->
+
+    <title>اسمارت بورس | ورود</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="{% static 'site/css/plugins.css' %}" rel="stylesheet" />
+    <link href="{% static 'site/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'site/css/rtl.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Body Inner -->
+    <div class="body-inner">
+        <!-- Body Inner -->
+
+        <!-- Header -->
+        <header id="header" data-transparent="true" data-fullwidth="true">
+            <div class="header-inner">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo"> <a href="#"><span class="logo-default">POLO</span><span
+                                class="logo-dark">POLO</span></a> </div>
+                    <!--End: Logo-->
+                    {% include 'partials/nav.html' %}
+                </div>
+            </div>
+        </header>
+        <!-- end: Header -->
+        <div class="body-inner">
+            <section class="fullscreen" data-bg-parallax="{% static 'site/images/pages/1.jpg' %}">
+                <div class="container">
+                    <div>
+                        <div class="text-center m-b-30">
+                            <a href="{% url 'pages:home' %}" class="logo">
+                                <img src="{% static 'site/images/logo-dark.png' %}" alt="Polo Logo">
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5 center p-50 background-white b-r-6">
+                                <h3>فرم ورود به حساب کاربری</h3>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.tags }}">
+                                            <p style="color: #fff;" >{{ message }}</p>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label class="sr-only">نام کاربری یا ایمیل</label>
+                                        {% render_field form.username placeholder="نام کاربری یا ایمیل" class="form-control"  %}
+                                    </div>
+                                    <div class="form-group m-b-5">
+                                        <label class="sr-only">رمز عبور</label>
+                                        {% render_field form.password placeholder="رمز عبور" class="form-control"  %}
+                                    </div>
+                                    <div class="text-left form-group">
+                                        <button type="submit" class="btn">ورود</button>
+                                    </div>
+                                </form>
+                                <p class="small">حساب کاربری ندارید؟<a href="{% url 'accounts:register' %}"> ثبت نام کنید</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    </div>
+    <!-- end: Body Inner -->
+
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    <script src="{% static 'site/js/jquery.js' %}"></script>
+    <script src="{% static 'site/js/plugins.js' %}"></script>
+    <script src="{% static 'site/js/functions.js' %}"></script>
+
+</body>
+
+</html>

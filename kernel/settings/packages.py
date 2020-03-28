@@ -56,13 +56,20 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 50
 }
 
+ALLOW_UNICODE_SLUGS = True
+
+# ###################### #
+# EXTENSION DEPENDENCIES #
+# ###################### #
+
 AUTHENTICATION_BACKENDS = [
     # Django ModelBackend is the default authentication backend.
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-ALLOW_UNICODE_SLUGS = True
+LOGIN_REDIRECT_URL = 'pages:home'
 
+LOGOUT_REDIRECT_URL = 'accounts:login'
 
 # ######################### #
 #         CKEDITOR          #

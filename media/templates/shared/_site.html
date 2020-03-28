@@ -20,7 +20,7 @@
     <link href="{% static 'site/css/plugins.css' %}" rel="stylesheet" />
     <link href="{% static 'site/css/style.css' %}" rel="stylesheet" />
     {% if view.is_rtl %}
-    <link href="{% static 'site/css/rtl.css' %}" rel="stylesheet" />
+        <link href="{% static 'site/css/rtl.css' %}" rel="stylesheet" />
     {% endif %}
     {% block styles %}
     {% endblock %}
@@ -50,7 +50,8 @@
         {% endblock %}
         
 
-        
+        {% if view.page_name == 'لاگین' %}
+        {% else %}
         <!-- Footer -->
         <footer id="footer">
             <div class="copyright-content">
@@ -60,6 +61,7 @@
             </div>
         </footer>
         <!-- end: Footer -->
+        {% endif %}
 
     </div>
     <!-- end: Body Inner -->

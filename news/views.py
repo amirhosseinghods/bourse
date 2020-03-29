@@ -21,3 +21,13 @@ class SingleNewsView(TemplateView):
         context = super(SingleNewsView, self).get_context_data(**kwargs)
 
         return context
+
+class MorePostsView(TemplateView):
+    template_name = 'pages/news/more-posts.html'
+    page_name = _('خبر')
+    is_rtl = True
+
+    def get_context_data(self, **kwargs):
+        context = super(MorePostsView, self).get_context_data(**kwargs)
+
+        return context

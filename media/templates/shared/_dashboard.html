@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ view.page_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="{% static 'assets/dashboard/font/iconsmind-s/css/iconsminds.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/font/simple-line-icons/css/simple-line-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/bootstrap.rtl.only.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/fullcalendar.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/dataTables.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/datatables.responsive.bootstrap4.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/select2.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/glide.core.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/bootstrap-stars.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/nouislider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/bootstrap-datepicker3.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/vendor/component-custom-switch.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/dashboard/css/main.css' %}" />
+</head>
+
+<body id="app-container" class="menu-default show-spinner">
+    {% include 'dashboard/partials/top-nav.html' %}
+
+    {% include 'dashboard/partials/side-nav.html' %}
+
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    {% include 'dashboard/partials/footer.html' %}
+
+
+    <script src="{% static 'assets/dashboard/js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/chartjs-plugin-datalabels.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/moment.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/datatables.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/progressbar.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/select2.full.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/Sortable.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/mousetrap.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/vendor/glide.min.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/dore.script.js' %}"></script>
+    <script src="{% static 'assets/dashboard/js/scripts.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>

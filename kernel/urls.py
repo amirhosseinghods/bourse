@@ -30,6 +30,7 @@ urlpatterns = [
     re_path(r'^analyze/', include('analysis.urls')),
     re_path(r'^accounts/', include('accounts.urls')),
     re_path(r'^accounts/', include("django.contrib.auth.urls")),
+    re_path(r'^dashboard/', include("dashboard.urls")),
     re_path(r'^tutorials/', include('tutorial.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 

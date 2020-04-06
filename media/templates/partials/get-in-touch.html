@@ -1,48 +1,42 @@
+{% load widget_tweaks %}
 <!-- GET IN TOUCH -->
 <section class="background-grey">`
     <div class="container">
 
         <div class="text-center m-b-100">
-            <h1 class="text-medium">Get in touch?</h1>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+            <h1 class="text-medium">با ما در تماس باشید</h1>
         </div>
         <div class="row">
             <div class="col-lg-8 center">
-                <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form"
-                    method="post">
+                <form class="widget-contact-form rtl" action="{% url 'pages:home' %}" role="form" method="post">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="name">Name</label>
-                            <input type="text" aria-required="true" name="widget-contact-form-name"
-                                class="form-control required name" placeholder="Enter your Name">
+                            <label for="id_full_name">نام و نام خانوادگی</label>
+                            {% render_field form.full_name placeholder="نام خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" aria-required="true" required name="widget-contact-form-email"
-                                class="form-control required email" placeholder="Enter your Email">
+                            <label for="id_email">ایمیل</label>
+                            {% render_field form.email placeholder="ایمیل خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="subject">Phone</label>
-                            <input type="text" name="widget-contact-form-phone" class="form-control"
-                                placeholder="Enter your phone number">
+                            <label for="id_from_where">از چه راهی با ما آشنا شدید</label>
+                            {% render_field form.from_where required=required class="form-control required name" aria-required="true" %}
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="subject">Company</label>
-                            <input type="text" name="widget-contact-form-company" class="form-control"
-                                placeholder="Enter your Company name">
+                            <label for="id_subject">موضوع</label>
+                            {% render_field form.subject placeholder="موضوع خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea type="text" name="widget-contact-form-message" rows="8" class="form-control required"
-                            placeholder="Enter your Message"></textarea>
+                        <label for="id_message">پیام خود را وارد کنید</label>
+                        {% render_field form.message placeholder="موضوع خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
                     </div>
                     <div class="row">
                         <div class="form-group center">
-                            <button class="btn" type="submit" id="form-submit"><i
-                                    class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                            <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;ارسال پیام</button>
                         </div>
                     </div>
                 </form>

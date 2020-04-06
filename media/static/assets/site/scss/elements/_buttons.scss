@@ -11,7 +11,7 @@ button.btn,
 a.btn:not([href]):not([tabindex]) {
     font-family: $font-headings;
     border-radius: $button-border-radius $button-border-radius $button-border-radius $button-border-radius;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: .5px;
     text-decoration: none;

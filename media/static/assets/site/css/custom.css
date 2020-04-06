@@ -6,3 +6,104 @@
  <link href="css/custom.css" rel="stylesheet">
 
 */
+
+.rtl {
+    text-align: right;
+    direction: rtl;
+}
+
+.right {
+    float: right;
+}
+
+@font-face {
+    font-family: "ravi-black";
+    src: url("../fonts/ravi/Black/Ravi08Black.eot");
+    src: url("../fonts/ravi/Black/Ravi08Black.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ravi/Black/Ravi08Black.otf") format("opentype"),
+        url("../fonts/ravi/Black/Ravi08Black.svg") format("svg"),
+        url("../fonts/ravi/Black/Ravi08Black.ttf") format("truetype"),
+        url("../fonts/ravi/Black/Ravi08Black.woff") format("woff"),
+        url("../fonts/ravi/Black/Ravi08Black.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-bold";
+    src: url("../fonts/ravi/Bold/Ravi06Bold.eot");
+    src: url("../fonts/ravi/Bold/Ravi06Bold.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/Bold/Ravi06Bold.otf") format("opentype"),
+         url("../fonts/ravi/Bold/Ravi06Bold.svg") format("svg"),
+         url("../fonts/ravi/Bold/Ravi06Bold.ttf") format("truetype"),
+         url("../fonts/ravi/Bold/Ravi06Bold.woff") format("woff"),
+         url("../fonts/ravi/Bold/Ravi06Bold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-extrabold";
+    src: url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.eot");
+    src: url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.otf") format("opentype"),
+         url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.svg") format("svg"),
+         url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.ttf") format("truetype"),
+         url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.woff") format("woff"),
+         url("../fonts/ravi/ExtraBold/Ravi07ExtraBold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-Light";
+    src: url("../fonts/ravi/LightRavi02Light.eot");
+    src: url("../fonts/ravi/LightRavi02Light.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/LightRavi02Light.otf") format("opentype"),
+         url("../fonts/ravi/LightRavi02Light.svg") format("svg"),
+         url("../fonts/ravi/LightRavi02Light.ttf") format("truetype"),
+         url("../fonts/ravi/LightRavi02Light.woff") format("woff"),
+         url("../fonts/ravi/LightRavi02Light.woff2") format("woff2");
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-medium";
+    src: url("../fonts/ravi/Medium/Ravi04Medium.eot");
+    src: url("../fonts/ravi/Medium/Ravi04Medium.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/Medium/Ravi04Medium.otf") format("opentype"),
+         url("../fonts/ravi/Medium/Ravi04Medium.svg") format("svg"),
+         url("../fonts/ravi/Medium/Ravi04Medium.ttf") format("truetype"),
+         url("../fonts/ravi/Medium/Ravi04Medium.woff") format("woff"),
+         url("../fonts/ravi/Medium/Ravi04Medium.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-semibold";
+    src: url("../fonts/ravi/SemiBold/Ravi05SemiBold.eot");
+    src: url("../fonts/ravi/SemiBold/Ravi05SemiBold.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/SemiBold/Ravi05SemiBold.otf") format("opentype"),
+         url("../fonts/ravi/SemiBold/Ravi05SemiBold.svg") format("svg"),
+         url("../fonts/ravi/SemiBold/Ravi05SemiBold.ttf") format("truetype"),
+         url("../fonts/ravi/SemiBold/Ravi05SemiBold.woff") format("woff"),
+         url("../fonts/ravi/SemiBold/Ravi05SemiBold.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ravi-thin";
+    src: url("../fonts/ravi/Thin/Ravi01Thin.eot");
+    src: url("../fonts/ravi/Thin/Ravi01Thin.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/ravi/Thin/Ravi01Thin.otf") format("opentype"),
+         url("../fonts/ravi/Thin/Ravi01Thin.svg") format("svg"),
+         url("../fonts/ravi/Thin/Ravi01Thin.ttf") format("truetype"),
+         url("../fonts/ravi/Thin/Ravi01Thin.woff") format("woff"),
+         url("../fonts/ravi/Thin/Ravi01Thin.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}

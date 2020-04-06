@@ -10,7 +10,7 @@
             <h1>تماس با ما</h1>
             <span>{{ contact.subtitle }}</span>
         </div>
-        
+
     </div>
 </section>
 <!-- end: Page title -->
@@ -26,14 +26,13 @@
                         method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">نام</label>
-                                <input type="text" aria-required="true" name="widget-contact-form-name" required
-                                    class="form-control required name" placeholder="نام خود را وارد نمایید">
+                                <label for="id_full_name">نام</label>
+                                {% render_field form.full_name placeholder="نام خود را وارد نمایید" required=required %}
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">ایمیل</label>
-                                <input type="email" aria-required="true" name="widget-contact-form-email"
-                                    required class="form-control required email" placeholder="ایمیل خود را وارد نمایید">
+                                <input type="email" aria-required="true" name="widget-contact-form-email" required
+                                    class="form-control required email" placeholder="ایمیل خود را وارد نمایید">
                             </div>
                         </div>
                         <div class="row">
@@ -52,8 +51,8 @@
                             <script src="https://www.google.com/recaptcha/api.js"></script>
                             <div class="g-recaptcha" data-sitekey="6LddCxAUAAAAAKOg0-U6IprqOZ7vTfiMNSyQT2-M"></div>
                         </div> -->
-                        <button class="btn" type="submit" id="form-submit"><i
-                                class="fa fa-paper-plane"></i>&nbsp; ارسال پیام</button>
+                        <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp; ارسال
+                            پیام</button>
                     </form>
                 </div>
             </div>
@@ -66,15 +65,15 @@
                         </address>
                     </div>
                     {% if contact.address2 %}
-                        <div class="col-lg-6">
-                            <address>
-                                {{ contact.address2 }}
-                            </address>
-                        </div>
+                    <div class="col-lg-6">
+                        <address>
+                            {{ contact.address2 }}
+                        </address>
+                    </div>
                     {% endif %}
                 </div>
                 <!-- Google Map -->
-                    {{ contact.google_map_code }}
+                {{ contact.google_map_code }}
                 <!-- end: Google Map -->
             </div>
         </div>
@@ -82,3 +81,9 @@
 </section> <!-- end: Content -->
 {% endblock %}
 
+<div data-notify="container" class="col-11 col-md-4 alert alert-danger" role="alert" data-notify-position="top-right"
+    style="display: inline-block; margin: 0px auto; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; top: 20px; right: 20px;">
+    <button type="button" aria-hidden="true" class="close" data-notify="dismiss"
+        style="position: absolute; right: 10px; top: 5px; z-index: 1033;">×</button><span data-notify="icon"></span>
+    <span data-notify="title"></span> <span data-notify="message">undefined</span><a href="#" target="_blank"
+        data-notify="url"></a></div>

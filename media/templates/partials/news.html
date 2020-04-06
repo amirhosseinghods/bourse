@@ -3,187 +3,41 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 center text-center m-b-60">
-                <h2>Portfolio</h2>
-                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
-                    elit. Proin gravida nibh vel velit auctor Aenean sollicitudin, adipisicing elit sed lorem quis
-                    bibendum auctor.
-                </p>
+                <h2>اخبار</h2>
             </div>
         </div>
 
         <nav class="grid-filter gf-outline" data-layout="#portfolio">
             <ul>
-                <li class="active"><a href="#" data-category="*">Show All</a></li>
-                <li><a href="#" data-category=".ct-branding">Branding</a></li>
-                <li><a href="#" data-category=".ct-photography">Photography</a></li>
-                <li><a href="#" data-category=".ct-marketing">Marketing</a></li>
-                <li><a href="#" data-category=".ct-media">Media</a></li>
-                <li><a href="#" data-category=".ct-webdesign">Web design</a></li>
+                {% for category in news_categories %}
+                    {% if forloop.first %}
+                        <li class="active"><a href="#" data-category="*">Show All</a></li>
+                        <li><a href="#" data-category=".{{ category.slug }}">{{ category.title }}</a></li>
+                        {% else %}
+                        <li><a href="#" data-category=".{{ category.slug }}">{{ category.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
             </ul>
-            <div class="grid-active-title">Show All</div>
+            <!-- <div class="grid-active-title">Show All</div> -->
         </nav>
 
 
-        <div id="portfolio" class="grid-layout portfolio-3-columns" data-margin="20">
-
-            <div class="portfolio-item grey-bg no-overlay ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="portfolio-item grey-bg no-overlay ct-photography ct-marketing ct-media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
+        <div id="portfolio" class="grid-layout portfolio-3-columns rtl" data-margin="20">
+            {% for post in news_posts %}
+                <div class="portfolio-item grey-bg no-overlay {{ post.category.slug }}">
+                    <div class="portfolio-item-wrap">
+                        <div class="portfolio-image">
+                            <a href="{% url 'news:post' slug=post.slug %}"><img src="{{ post.picture.url }}" alt="{{ post.title }}"></a>
+                        </div>
+                        <div class="portfolio-description">
+                            <a href="{% url 'news:post' slug=post.slug %}">
+                                <h3>{{ post.title }}</h3>
+                                <p style="font-family: ravi-light;">{{ post.summary | safe }}</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-
-            <div class="portfolio-item grey-bg no-overlay ct-photography ct-media ct-branding ct-Media">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div
-                class="portfolio-item grey-bg no-overlay ct-photography ct-media ct-branding ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="portfolio-item grey-bg no-overlay ct-marketing ct-media ct-branding ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div
-                class="portfolio-item grey-bg no-overlay ct-photography ct-media ct-branding ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div
-                class="portfolio-item grey-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div
-                class="portfolio-item grey-bg no-overlay ct-photography ct-media ct-branding ct-Media ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item grey-bg no-overlay ct-marketing ct-media ct-branding ct-marketing ct-webdesign">
-                <div class="portfolio-item-wrap">
-                    <div class="portfolio-image">
-                        <a href="#"><img src="{% static 'assets/site/images/portfolio/66.jpg' %}" alt=""></a>
-                    </div>
-                    <div class="portfolio-description">
-                        <a href="portfolio-page-grid-gallery.html">
-                            <h3>Towel World</h3>
-                            <span>Graphics</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
 
     </div>

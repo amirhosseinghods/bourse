@@ -14,6 +14,11 @@ class NewsPostAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     ordering = ('-created',)
 
+    def get_form(self, request, *args, **kwargs):
+        form = super(NewsPostAdmin, self).get_form(request, *args, **kwargs)
+        form.base_fields['author'].initial = request.user
+        return form
+
 @admin.register(NewsCategory)
 class NewsCategoryAdmin(admin.ModelAdmin):
     '''Admin View for News Category'''

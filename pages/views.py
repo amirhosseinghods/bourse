@@ -10,6 +10,8 @@ from .models import Contact
 
 from django.utils.translation import ugettext_lazy as _
 from analysis.models import AnalyzePost
+from news.models import NewsPost
+from news.models import NewsCategory
 
 class HomeView(CreateView):
     template_name = 'pages/index.html'
@@ -33,6 +35,8 @@ class HomeView(CreateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['latest_posts'] = AnalyzePost.objects.all()[:3]
+        context['news_posts'] = NewsPost.objects.all()
+        context['news_categories'] = NewsCategory.objects.all()
         return context
 
 class ContactView(CreateView):

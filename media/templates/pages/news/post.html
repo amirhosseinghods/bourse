@@ -1,11 +1,15 @@
+{% extends 'shared/_site.html' %}
+
+
+{% block body %}
 <!-- Page title -->
-<section id="page-title" class="page-title-center text-light" style="background-image:url( {{ post.image.url }} );">
+<section id="page-title" class="page-title-center text-light" style="background-image:url( {{ post.picture.url }} );">
     <div class="bg-overlay"></div>
     <div class="container">
         <div class="page-title">
             <span class="post-meta-category"><a href="">{{ post.category.title }}</a></span>
             <h1>{{ post.title }}</h1>
-            <div class="small m-b-20">{{ post.created }} | <a href="#">by {{ post.author.username }}</a></div>
+            <!-- <div class="small m-b-20">{{ post.created }} | <a href="#">by {{ post.author.username }}</a></div> -->
         </div>
     </div>
 </section>
@@ -18,15 +22,15 @@
             <!-- Post single item-->
             <div class="post-item">
                 <div class="post-item-wrap">
-                    <div class="post-item-description">
-                        {{ post.content }}
+                    <div class="post-item-description rtl">
+                        {{ post.content | safe }}
                     </div>
-                    <div class="post-tags">
-                        {% for tag in post.tags.all() %}
+                    <div class="post-tags rtl">
+                        {% for tag in post.tags.all %}
                             <a href="#">{{ tag.title }}</a>
                         {% endfor %}
                     </div>
-                   
+
                 </div>
             </div>
             <!-- end: Post single item-->
@@ -34,3 +38,4 @@
     </div>
 </section>
 <!-- end: Page Content -->
+{% endblock %}

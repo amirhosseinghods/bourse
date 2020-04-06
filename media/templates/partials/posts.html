@@ -4,8 +4,7 @@
      <div class="container">
          <div data-animate-delay="100" data-animate="fadeInUp">
              <div class="heading-text heading-section text-center">
-                 <h1 class="text-medium">Our Blog!</h1>
-                 <span class="lead">Create amam ipsum dolor sit amet, Beautiful nature, and rare feathers!.</span>
+                 <h1 class="text-medium">آخرین تحلیل ها</h1>
              </div>
          </div>
          <div id="blog">
@@ -15,7 +14,7 @@
                         <div class="post-item border">
                             <div class="post-item-wrap">
                                 <div class="post-image">
-                                    <a href="#">
+                                    <a href="{% url 'analyze:post' slug=post.slug %}">
                                         <img alt="" src="{{ post.picture.url }}">
                                     </a>
                                     <span class="post-meta-category"><a href="">{{ post.category }}</a></span>
@@ -24,10 +23,9 @@
                                     <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
                                     <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33
                                             Comments</a></span>
-                                    <h2><a href="#">{{ post.title }}</a></h2>
+                                    <h2><a href="{% url 'analyze:post' slug=post.slug %}">{{ post.title }}</a></h2>
                                     <p>{{ post.summary }}</p>
-                                    <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">Read More <i
-                                            class="fa fa-arrow-right"></i></a>
+                                    <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">بیشتر بدانید <i class="fa fa-arrow-left"></i></a>
                                 </div>
                             </div>
                         </div>

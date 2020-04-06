@@ -4,7 +4,7 @@
 
 {% block body %}
 <!-- Content -->
-<section id="page-content" class="sidebar-left">
+<section id="page-content" class="sidebar-left rtl">
     <div class="container">
         <div class="row">
             <!-- post content -->
@@ -12,14 +12,7 @@
                 <!-- Page title -->
                 <div class="page-title">
                     <h1>{{ view.page_name }}</h1>
-                    <div class="breadcrumb float-left">
-                        <ul>
-                            <li><a href="{% url 'pages:home' %}">Home</a>
-                            </li>
-                            <li class="active"><a href="#">{{ view.page_name }}</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <br/>
                 </div>
                 <!-- end: Page title -->
                 <!-- Blog -->
@@ -35,10 +28,10 @@
                                     <span class="post-meta-category"><a href="">{{ post.category.title }}</a></span>
                                 </div>
                                 <div class="post-item-description">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.created }}</span>
+                                    <!-- <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{ post.created }}</span> -->
                                     <h2><a href="#">{{ post.title }}</a></h2>
-                                    <p>{{ post.summary }}</p>
-                                    <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+                                    <p class="rtl">{{ post.summary }}</p>
+                                    <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">بیشتر بدانید <i class="icon-chevron-left"></i></a>
                                 </div>
                             </div>
                         </div>

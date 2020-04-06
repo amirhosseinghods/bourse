@@ -8,7 +8,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="icon" type="image/png" href="#" />
+    <link rel="icon" type="image/png" href="{% static 'assets/site/images/favicon-icon.png' %}" />
 
     {% block seo %}
     {% endblock %}
@@ -19,10 +19,10 @@
     <!-- Stylesheets & Fonts -->
     <link href="{% static 'assets/site/css/plugins.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/site/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/site/css/custom.css' %}" rel="stylesheet" />
     {% if view.is_rtl %}
-        <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" />
+        <!-- <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" /> -->
     {% else %}
-        <link href="{% static 'assets/site/css/custom.css' %}" rel="stylesheet" />
     {% endif %}
     {% block styles %}
     {% endblock %}

@@ -42,6 +42,7 @@ class HomeView(CreateView):
 class ContactView(CreateView):
     template_name = 'pages/contact.html'
     model = Contact
+    form_class = ContactForm
     page_name = _('Contact Us')
     success_url = reverse_lazy('pages:success')
     is_rtl = False
@@ -61,6 +62,30 @@ class ContactView(CreateView):
         context = super(ContactView, self).get_context_data(**kwargs)
 
         return context
+
+# class OpenAccountView(CreateView):
+#     template_name = 'pages/open-account.html'
+#     model = OpenAccount
+#     form_class = OpenAccountForm
+#     page_name = _('افتتاح حساب')
+#     success_url = reverse_lazy('pages:success')
+#     is_rtl = False
+
+#     def form_valid(self, form):
+#         self.object = form.save()
+#         send_mail(
+#             'Smart Bourse Contact: {}'.format(form.data['subject']),
+#             '{}'.format(form.data['message']),
+#             'animatedidea@gmail.com',
+#             ['sa.goldeneagle@gmail.com'],
+#             fail_silently=False,
+#         )
+#         return HttpResponseRedirect(self.get_success_url())
+
+#     def get_context_data(self, **kwargs):
+#         context = super(ContactView, self).get_context_data(**kwargs)
+
+#         return context
 
 
 

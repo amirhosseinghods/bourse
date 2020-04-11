@@ -11,7 +11,7 @@
             <ul>
                 {% for category in news_categories %}
                     {% if forloop.first %}
-                        <li class="active"><a href="#" data-category="*">Show All</a></li>
+                        <li class="active"><a href="#" data-category="*">نمایش همه</a></li>
                         <li><a href="#" data-category=".{{ category.slug }}">{{ category.title }}</a></li>
                         {% else %}
                         <li><a href="#" data-category=".{{ category.slug }}">{{ category.title }}</a></li>

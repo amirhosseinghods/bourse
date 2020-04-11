@@ -17,6 +17,7 @@ class Site(models.Model):
     phone_number = models.CharField(_("Phone Number"), max_length = 15, help_text = "+98912...")
     address = models.CharField(_("Address"), max_length = 254)
 
+
     about_us = RichTextField(_("About us"))
     service_desc = RichTextField(_("Our Services"))
 
@@ -52,6 +53,41 @@ class Contact(models.Model):
     full_name = models.CharField(_("Name"), max_length = 100)
     email = models.EmailField(_("Email"), max_length = 100)
     from_where = models.CharField(_("from where"), choices = SOCIAL_MEDIAS, max_length = 20)
+    subject = models.CharField(_("Subject"), max_length = 100)
+    message = models.TextField(_("Message"))
+
+    created = models.DateTimeField(_("Created"), auto_now_add=True)
+    modified = models.DateTimeField(_("Modified"), auto_now=True)
+
+    class Meta:
+        """Meta definition for Contact."""
+
+        verbose_name = _('Contact')
+        verbose_name_plural = _('Contacts')
+        ordering = ('-created',)
+
+    def __str__(self):
+        return self.full_name
+
+    def save(self, *args, **kwargs):
+       
+       super(Contact, self).save(*args, **kwargs)
+
+
+
+class OpenAccount(models.Model):
+    SOCIAL_MEDIAS = (
+        ("under 100 milion", _("زیر 100 میلیون تومان")),
+        ("between 100 to 500 milion", _("از 100 تا 500 میلیون تومان")),
+        ("between 500 milion to 1 miliard", _("از 500 میلیون تا یک میلیارد تومان")),
+        ("between 1 to 5 miliard", _("از 1 تا 5 میلیارد تومان")),
+        ("", _("از 5 تا 10 میلیارد توامن")),
+        ("", _("بیش از 10 میلیارد تومان")),
+    )
+    full_name = models.CharField(_("Name"), max_length = 100)
+    national_code = models.CharField(_("National Code"), max_length = 100)
+    phone = models.CharField(_("Phone Number"), max_length = 100)
+    # investment = 
     subject = models.CharField(_("Subject"), max_length = 100)
     message = models.TextField(_("Message"))
 

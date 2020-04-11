@@ -76,29 +76,36 @@ class Contact(models.Model):
 
 
 class OpenAccount(models.Model):
-    SOCIAL_MEDIAS = (
+    INVESTMENTS = (
         ("under 100 milion", _("زیر 100 میلیون تومان")),
         ("between 100 to 500 milion", _("از 100 تا 500 میلیون تومان")),
         ("between 500 milion to 1 miliard", _("از 500 میلیون تا یک میلیارد تومان")),
         ("between 1 to 5 miliard", _("از 1 تا 5 میلیارد تومان")),
-        ("", _("از 5 تا 10 میلیارد توامن")),
-        ("", _("بیش از 10 میلیارد تومان")),
+        ("between 5 to 10 miliard", _("از 5 تا 10 میلیارد توامن")),
+        ("above 10 miliard", _("بیش از 10 میلیارد تومان")),
     )
-    full_name = models.CharField(_("Name"), max_length = 100)
-    national_code = models.CharField(_("National Code"), max_length = 100)
-    phone = models.CharField(_("Phone Number"), max_length = 100)
-    # investment = 
-    subject = models.CharField(_("Subject"), max_length = 100)
-    message = models.TextField(_("Message"))
 
+    FAMILIARITY = (
+        ("low", _("کم")),
+        ("Moderate", _("متوسط")),
+        ("well", _("خوب")),
+        ("high", _("عالی")),
+    )
+
+    full_name = models.CharField(_("Name"), max_length = 100)
+    national_code = models.CharField(_("National Code"), max_length = 10)
+    phone = models.CharField(_("Phone Number"), max_length = 10)
+    investment = models.CharField(_("Investment"), choices = INVESTMENTS, max_length = 50)
+    familiarity = models.CharField(_("Familiarity"), choices = FAMILIARITY, max_length = 50 )
+    
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     class Meta:
-        """Meta definition for Contact."""
+        """Meta definition for Open Account."""
 
-        verbose_name = _('Contact')
-        verbose_name_plural = _('Contacts')
+        verbose_name = _('Account')
+        verbose_name_plural = _('Accountss')
         ordering = ('-created',)
 
     def __str__(self):
@@ -106,4 +113,4 @@ class OpenAccount(models.Model):
 
     def save(self, *args, **kwargs):
        
-       super(Contact, self).save(*args, **kwargs)
+       super(OpenAccount, self).save(*args, **kwargs)

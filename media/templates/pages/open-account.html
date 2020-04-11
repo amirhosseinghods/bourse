@@ -1,0 +1,72 @@
+{% extends 'shared/_site.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block body %}
+<!-- Page title -->
+<section id="page-title" data-bg-parallax="images/parallax/5.jpg">
+    <div class="container">
+        <div class="page-title">
+            <h1>تماس با ما</h1>
+            <span>{{ contact.subtitle }}</span>
+        </div>
+
+    </div>
+</section>
+<!-- end: Page title -->
+<!-- CONTENT -->
+<section class="rtl">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="text-uppercase">افتتاح حساب</h3>
+                <p>{{ contact.info }}</p>
+                <div class="m-t-30">
+                    <form class="widget-contact-form rtl" action="{% url 'pages:open-account' %}" role="form" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="id_full_name">نام و نام خانوادگی</label>
+                                {% render_field form.full_name placeholder="نام خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="id_email">شماره تماس</label>
+                                {% render_field form.phone placeholder="شماره تماس خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="id_email">کد ملی</label>
+                                {% render_field form.national_code placeholder="شماره تماس خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="id_from_where">میزان سرمایه فعال مورد نظر شما برای سرمایه گذاری در بورس</label>
+                                {% render_field form.investment required=required class="form-control required name" aria-required="true" %}
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="id_subject">میزان آشنایی شما با بازار بورس چقدر است</label>
+                                {% render_field form.familiarity required=required class="form-control required name" aria-required="true" %}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group center">
+                                <button class="btn" type="submit" id="form-submit"><i
+                                        class="fa fa-paper-plane"></i>&nbsp;افتتاح حساب</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section> <!-- end: Content -->
+{% endblock %}
+
+<div data-notify="container" class="col-11 col-md-4 alert alert-danger" role="alert" data-notify-position="top-right"
+    style="display: inline-block; margin: 0px auto; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; top: 20px; right: 20px;">
+    <button type="button" aria-hidden="true" class="close" data-notify="dismiss"
+        style="position: absolute; right: 10px; top: 5px; z-index: 1033;">×</button><span data-notify="icon"></span>
+    <span data-notify="title"></span> <span data-notify="message">undefined</span><a href="#" target="_blank"
+        data-notify="url"></a></div>

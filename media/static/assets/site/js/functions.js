@@ -1228,7 +1228,7 @@ var INSPIRO = {},
           var elem = $(this),
             elemSuccessMessage =
               elem.attr("data-success-message") ||
-              "We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.",
+              "داده شما <strong>با موفقیت</strong> ثبت شد. ما به زودی با شما در ارتباط خواهیم بود..",
             elemCustomRedirectPage = elem.attr("data-success-page");
           var button = elem.find("button#form-submit"),
             buttonText = button.html();
@@ -1262,7 +1262,7 @@ var INSPIRO = {},
                 type: request_method,
                 data: form_data,
                 success: function(text) {
-                  if (text.response == "success") {
+                  if (text == "success") {
                     if (elem.find(".g-recaptcha").children("div").length > 0) {
                       grecaptcha.reset();
                     }
@@ -2747,7 +2747,9 @@ var INSPIRO = {},
       $element = "body";
 
       var notify = function() {
+
         $.notify(
+
           {
             title: $title,
             message: $message
@@ -2761,8 +2763,8 @@ var INSPIRO = {},
               $backgroundImageContainer +
               ' class="bootstrap-notify ' +
               $elementContainer +
-              ' alert alert-{0}" role="alert">' +
-              '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+              ' alert alert-{0} rtl" role="alert">' +
+              '<button style="left: 10px;" type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
               '<span data-notify="icon"></span> ' +
               '<span data-notify="title">{1}</span> ' +
               '<span data-notify="message">{2}</span>' +

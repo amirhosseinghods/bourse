@@ -65,6 +65,7 @@ class ContactView(CreateView):
 
         return context
 
+
 class OpenAccountView(CreateView):
     template_name = 'pages/open-account.html'
     model = OpenAccount

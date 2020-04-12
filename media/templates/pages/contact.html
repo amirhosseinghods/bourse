@@ -14,6 +14,14 @@
     </div>
 </section>
 <!-- end: Page title -->
+
+<div data-notify="container" class="col-11 col-md-4 alert alert-success animated fadeOutUp" role="alert"
+    data-notify-position="top-right"
+    style="display: inline-block; margin: 0px auto; position: fixed; transition: all 0.5s ease-in-out 0s; z-index: 1031; top: 20px; right: 20px;"
+    data-closing="true"><button type="button" aria-hidden="true" class="close" data-notify="dismiss"
+        style="position: absolute; right: 10px; top: 5px; z-index: 1033;">×</button><span data-notify="icon"></span>
+    <span data-notify="title"></span> <span data-notify="message">داده شما <strong>با موفقیت</strong> ثبت شد. ما به زودی
+        با شما در ارتباط خواهیم بود..</span><a href="#" target="_blank" data-notify="url"></a></div>
 <!-- CONTENT -->
 <section class="rtl">
     <div class="container">
@@ -36,7 +44,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="id_from_where">از چه راهی با ما آشنا شدید</label>
+                                <label for="id_from_where">از چه طریقی با ما آشنا شدید</label>
                                 {% render_field form.from_where required=required class="form-control required name" aria-required="true" %}
                             </div>
                             <div class="form-group col-md-6">
@@ -46,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label for="id_message">پیام خود را وارد کنید</label>
-                            {% render_field form.message placeholder="موضوع خود را وارد نمایید" required=required class="form-control required name" aria-required="true" %}
+                            {% render_field form.message placeholder="پیام خود را بنویسید" required=required class="form-control required name" aria-required="true" %}
                         </div>
                         <div class="row">
                             <div class="form-group center">

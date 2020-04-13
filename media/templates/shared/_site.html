@@ -16,14 +16,14 @@
     {% endblock %}
     <!-- <meta name="description" content="#" />
     <meta name="keywords" content="#" /> -->
-    
+
     <title>اسمارت بورس | {{ view.page_name }}</title>
     <!-- Stylesheets & Fonts -->
     <link href="{% static 'assets/site/css/plugins.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/site/css/style.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/site/css/custom.css' %}" rel="stylesheet" />
     {% if view.is_rtl %}
-        <!-- <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" /> -->
+    <!-- <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" /> -->
     {% else %}
     {% endif %}
     {% block styles %}
@@ -31,35 +31,46 @@
 </head>
 
 <body>
+    <div class="sticky-container">
+        <ul class="sticky">
+            <li>
+                <img src="{% static 'assets/site/images/instagram.png' %}" width="32" height="32">
+                <p><a href="#" target="_blank">Follow Us on<br>Instagram</a></p>
+            </li>
+            <li>
+                <img src="{% static 'assets/site/images/linkedin.png' %}" width="32" height="32">
+                <p><a href="#" target="_blank">Follow Us on<br>LinkedIn</a>
+                </p>
+            </li>
+            <li>
+                <img src="{% static 'assets/site/images/telegram.png' %}" width="32" height="32">
+                <p><a href="#" target="_blank">Follow Us on<br>Telegram</a></p>
+            </li>
+        </ul>
+    </div>
 
     <!-- Body Inner -->
     <div class="body-inner">
-            <!-- Body Inner -->
+        <!-- Body Inner -->
 
         <!-- Header -->
         <header id="header" data-transparent="true" data-fullwidth="true">
             <div class="header-inner">
                 <div class="container">
                     <!--Logo-->
-                    <div id="logo"> <a href="#"><span class="logo-default"><img src="{% static 'assets/site/images/main/logo.svg' %}" height="80px" alt=""></span><span class="logo-dark">POLO</span></a> </div>
-                    <!--End: Logo-->                   
+                    <div id="logo"> <a href="#"><span class="logo-default"><img
+                                    src="{% static 'assets/site/images/main/logo.svg' %}" height="80px"
+                                    alt=""></span><span class="logo-dark">POLO</span></a> </div>
+                    <!--End: Logo-->
                     {% include 'partials/nav.html' %}
                 </div>
             </div>
         </header>
         <!-- end: Header -->
 
-        <div class="icon-bar">
-            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="google"><i class="fab fa-google"></i></a>
-            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-        </div>
-
         {% block body %}
         {% endblock %}
-        
+
 
         {% if view.page_name == 'لاگین' %}
         {% else %}
@@ -67,7 +78,9 @@
         <footer id="footer">
             <div class="copyright-content">
                 <div class="container">
-                    <div class="copyright-text text-center rtl">&copy; 2019 <img src="{% static 'assets/site/images/main/logo.svg' %}" height="40px" alt=""> SmartBourse - تمامی حق و حقوق این سایت محفوظ می باشد. </div>
+                    <div class="copyright-text text-center rtl">&copy; 2019 <img
+                            src="{% static 'assets/site/images/main/logo.svg' %}" height="40px" alt=""> SmartBourse
+                        - تمامی حق و حقوق این سایت محفوظ می باشد. </div>
                 </div>
             </div>
         </footer>

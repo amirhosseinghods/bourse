@@ -23,11 +23,13 @@
     <link href="{% static 'assets/site/css/style.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/site/css/custom.css' %}" rel="stylesheet" />
     {% if view.is_rtl %}
-    <!-- <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" /> -->
+        <!-- <link href="{% static 'assets/site/css/rtl.css' %}" rel="stylesheet" /> -->
     {% else %}
     {% endif %}
     {% block styles %}
     {% endblock %}
+
+    <script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="248b8485-7421-45d8-9dd3-856a23ba0198";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
 </head>
 
 <body>

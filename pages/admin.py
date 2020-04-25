@@ -8,3 +8,7 @@ from .models import Site
 admin.site.register(Contact)
 admin.site.register(OpenAccount)
 admin.site.register(Site)
+
+admin.site.site_header = 'SmartBourse Admin' # default: "Django Administration"
+admin.site.index_title = 'Admin'     # default: "Site administration"
+admin.site.site_title = 'SmartBourse' # default: "Django site admin"

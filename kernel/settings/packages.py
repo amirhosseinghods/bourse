@@ -21,9 +21,9 @@ INSTALLED_APPS.append('widget_tweaks')
 
 INSTALLED_APPS.append('pages')
 INSTALLED_APPS.append('blog')
-INSTALLED_APPS.append('tutorial')
 INSTALLED_APPS.append('news')
 INSTALLED_APPS.append('analysis')
+INSTALLED_APPS.append('shop')
 
 
 # #################### #

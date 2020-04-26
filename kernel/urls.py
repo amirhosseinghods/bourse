@@ -31,7 +31,7 @@ urlpatterns = [
     re_path(r'^accounts/', include('accounts.urls')),
     re_path(r'^accounts/', include("django.contrib.auth.urls")),
     re_path(r'^dashboard/', include("dashboard.urls")),
-    re_path(r'^tutorials/', include('tutorial.urls')),
+    re_path(r'^tutorials/', include('shop.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     re_path(r'^api-auth/', include('rest_framework.urls')),

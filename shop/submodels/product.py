@@ -67,8 +67,8 @@ class ProductPicture(models.Model):
     )
 
     title = models.CharField(_("Title"), max_length=120)
-    height_field = models.SmallIntegerField(_("Height Field"))
-    width_field = models.SmallIntegerField(_("Width Field"))
+    height_field = models.SmallIntegerField(_("Height Field"), editable = False)
+    width_field = models.SmallIntegerField(_("Width Field"), editable = False)
     picture = models.ImageField(_("Picture"), upload_to=product_directory_path, height_field='height_field', width_field='width_field', max_length=254, validators=[FileExtensionValidator(['jpg', 'png'])], help_text = _('picture size must be: 525x350'))
     standard_size = models.CharField(_("Standard Size"), choices = STANDARD_SIZES, max_length = 10)
 
@@ -181,7 +181,7 @@ class ProductStatus(models.Model):
 
 class ProductLevel(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(_("Slug"), max_length=140)
+    slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)

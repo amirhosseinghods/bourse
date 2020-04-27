@@ -11,6 +11,7 @@ class NewsPostAdmin(admin.ModelAdmin):
 
     list_display = ('slug', 'author', 'category', 'created')
     list_filter = ('author', 'category',)
+    filter_horizontal = ('tags',)
     search_fields = ('title',)
     ordering = ('-created',)
 

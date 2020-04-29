@@ -30,6 +30,7 @@ class NewsPost(models.Model):
     class Meta:
         verbose_name = _('News Post')
         verbose_name_plural = _('News Posts')
+        ordering = ('-created',)
 
     def __str__(self):
         return self.title

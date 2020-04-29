@@ -4570,7 +4570,9 @@ Portfolio
 .grid-item .portfolio-description a:hover i,
 .grid-item .grid-description a:hover i,
 .grid-item .portfolio-links a:hover i {
-  color: #6658d1;
+  background-color: #6658d1;
+  color: #ffffff;
+  border: 1px solid #6658d1;
 }
 .portfolio-item .portfolio-description span,
 .portfolio-item .portfolio-description p,
@@ -5472,6 +5474,7 @@ Portfolio
 .post-item .post-item-wrap {
   background-color: #ffffff;
   position: relative;
+  height: 460px;
 }
 .post-item img {
   width: 100%;

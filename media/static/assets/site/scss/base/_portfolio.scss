@@ -119,23 +119,23 @@ Portfolio
 			}
 
 			i {
-				background-color: $color-white;
+			
 				color: $color-body;
-				border-radius: 50%;
+			
 				color: #444;
 				font-size: 18px;
 				height: 40px;
 				line-height: 40px !important;
 				width: 40px;
 				transition: all 250ms ease-in-out 0s;
-				border: 1px solid #ededed;
+	
 			}
 
 			&:hover {
 				i {
-					background-color: $color-theme;
-					color: $color-white;
-					border: 1px solid $color-theme;
+				
+					color:$color-theme;
+				
 				}
 			}
 		}

@@ -396,15 +396,15 @@ kbd {
 	Header
 -----------------------------------------------------------------*/
 
-#header .header-inner #logo,
+/* #header .header-inner #logo,
 #header #header-wrap #logo,
 #mainMenu nav>ul>li {
   float: right;
-}
+} */
 
 .header-extras,
 #mainMenu {
-  float: left;
+  float: right;
 }
 
 #mainMenu nav>ul>li .dropdown-menu>li>a,

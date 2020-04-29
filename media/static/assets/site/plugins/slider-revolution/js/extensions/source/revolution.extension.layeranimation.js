@@ -748,14 +748,14 @@ jQuery.extend(true,_R, {
 		
 		// SET TOP/LEFT POSITION OF LAYER
 		if (_._nctype!=="row" && _._nctype!=="column") 			
-			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, top:_.calcy,left:_.calcx,overwrite:"auto"});		
+			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, top:_.calcy,right:_.calcx,overwrite:"auto"});		
 		else 
 		if (_._nctype!=="row")
-			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, width:_.columnwidth, top:0,left:0,overwrite:"auto"});
+			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, width:_.columnwidth, top:0,right:0,overwrite:"auto"});
 		else
 		if (_._nctype==="row") {
 			var _roww = _._ba==="grid" ? crw+"px" : "100%";			
-			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, width:_roww, top:0,left:obj.offsetx,overwrite:"auto"});
+			punchgs.TweenLite.set(_._pw,{zIndex:tpcapindex, width:_roww, top:0,right:obj.offsetx,overwrite:"auto"});
 		}
 		if (_.blendmode!==undefined)
 			punchgs.TweenLite.set(_._pw,{mixBlendMode:_.blendmode});

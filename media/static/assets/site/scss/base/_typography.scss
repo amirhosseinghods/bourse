@@ -12,6 +12,7 @@ a {
     margin: 0;
     padding: 0;
     text-decoration: none;
+
 }
 
 article,
@@ -177,7 +178,7 @@ p {
     line-height: 1.7;
     letter-spacing: 0;
     color: $paragraph-color;
-    font-family: $font-body;
+    font-family: $font-paragraph;
 }
 
 ul.bullets {

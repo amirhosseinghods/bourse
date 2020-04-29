@@ -6,9 +6,9 @@ $font-base: "ravi-medium",
 sans-serif;
 $font-body: $font-base;
 $font-headings: $font-base;
-$font-paragraph: "ravi-light",
-sans-serif;
-$font-menu: $font-base;
+$font-paragraph: "ravi-light", sans-serif;
+$font-bold: "ravi-bold";
+$font-menu: $font-paragraph;
 $font-menu-dropdown: $font-base;
 //Icons
 $font-size-icon: 24px;
@@ -19,8 +19,10 @@ $font-icon-fontawesome-brands: "Font Awesome 5 Brands";
 $font-size: 13px;
 $font-weight: 300;
 // Base Colors
+$organization-color-primary:#6658d1;
+$organization-color-secoundary:#2e3774;
 $color-master: #626262 !default;
-$color-theme: #9773dd;  
+$color-theme: #6658d1;  
 $color-theme-hover: lighter($color-theme, 5%);
 $color-body: #484848;
 $color-primary: $color-theme;

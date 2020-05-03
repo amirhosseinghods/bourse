@@ -21,8 +21,8 @@
                         
                         <div class="seperator m-b-10"></div>
                         <p>{{ product.content|safe }}</p>
-                        <div class="product-meta">
-                            <p>Tags: {% for tag in product.tags.all %}<a rel="tag" href="#">{{ tag }}</a>,{% endfor %} </p>
+                        <div class="product-meta" style="float: right; direction: rtl;">
+                            <p>برچسب ها: {% for tag in product.tags.all %}<a rel="tag" href="#">{{ tag }}</a>,{% endfor %} </p>
                         </div>
                         <div class="seperator m-t-20 m-b-10"></div>
                     </div>

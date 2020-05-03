@@ -20,11 +20,12 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'price', 'price_unit', 'duration', 'available', 'teacher', 'category', 'badge', 'level', 'status', 'created', 'modified')
     list_filter = ('price_unit', 'available', 'teacher', 'category', 'badge', 'level', 'status')
     list_editable = ('category', 'available', 'status')
+    filter_horizontal = ('pictures', 'tags')
     search_fields = ('title',)
 
 @admin.register(ProductPicture)
 class ProductPictureAdmin(admin.ModelAdmin):
-    list_display = ('title', 'height_field', 'width_field', 'product', 'standard_size')
+    list_display = ('title', 'height_field', 'width_field', 'standard_size')
     list_filter = ('standard_size',)
     search_fields = ('title',)
 

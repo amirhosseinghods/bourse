@@ -36,6 +36,8 @@ class Product(models.Model):
     status = models.ForeignKey('ProductStatus', verbose_name=_("Product Status"), related_name = 'products', on_delete=models.PROTECT)
 
     tags = models.ManyToManyField('ProductTag', verbose_name=_("Product Tags"))
+    
+    pictures = models.ManyToManyField("ProductPicture", verbose_name=_("Product Picture"))
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)
@@ -71,8 +73,6 @@ class ProductPicture(models.Model):
     width_field = models.SmallIntegerField(_("Width Field"), editable = False)
     picture = models.ImageField(_("Picture"), upload_to=product_directory_path, height_field='height_field', width_field='width_field', max_length=254, validators=[FileExtensionValidator(['jpg', 'png'])], help_text = _('picture size must be: 525x350'))
     standard_size = models.CharField(_("Standard Size"), choices = STANDARD_SIZES, max_length = 10)
-
-    product = models.ForeignKey("Product", verbose_name=_("Product Post"), related_name='pictures', on_delete=models.CASCADE)
 
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified"), auto_now=True)

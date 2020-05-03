@@ -31,10 +31,10 @@
                             <!-- <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span> -->
                             <!-- <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33
                                     Comments</a></span> -->
-                            <h2><a href="#">{{ post.title }}
+                            <h2><a href="{% url 'news:post' slug=post.slug %}">{{ post.title }}
                                 </a></h2>
                             <p>{{ post.summary | safe }}</p>
-                            <a href="{% url 'analyze:post' slug=post.slug %}" class="item-link">بیشتر بدانید <i class="icon-chevron-left"></i></a>
+                            <a href="{% url 'news:post' slug=post.slug %}" class="item-link">بیشتر بدانید <i class="icon-chevron-left"></i></a>
                         </div>
                     </div>
                 </div>

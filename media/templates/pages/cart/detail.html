@@ -1,0 +1,77 @@
+{% extends 'shared/_site.html' %}
+
+{% block body %}
+<section id="page-title">
+    <div class="container">
+        <div class="page-title">
+            <h1>Shopping Cart</h1>
+            <span>Shopping details</span>
+        </div>
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="#">Home</a>
+                </li>
+                <li><a href="#">Shop</a>
+                </li>
+                <li class="active"><a href="#">Shopping Cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section id="shop-cart">
+    <div class="container">
+        <div class="shop-cart">
+            <div class="table table-sm table-striped table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="cart-product-remove"></th>
+                            <th class="cart-product-thumbnail">Product</th>
+                            <th class="cart-product-price">Unit Price</th>
+                            <th class="cart-product-subtotal">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart %}
+                        hi
+                            {% with product=item.product %}
+                                <tr>
+                                    <td class="cart-product-remove">
+                                        <a href="{{ product.get_absolute_url }}"><i class="fa fa-times"></i></a>
+                                    </td>
+                                    <td class="cart-product-thumbnail">
+                                        {% for pic in product.pictures.all %}
+                                            {% if forloop.first %}
+                                                <a href="{{ pic.picture.url }}">
+                                                    <img src="{{ pic.picture.url }}" alt="{{ product.title }}">
+                                                </a>
+                                            {% endif %}
+                                        {% endfor %}
+                                        <div class="cart-product-thumbnail-name">{{ product.title }}</div>
+                                    </td>
+                                    <td class="cart-product-price">
+                                        <span class="amount">{{ product.price }}</span>
+                                    </td>
+                                    
+                                    <td class="cart-product-subtotal">
+                                        <span class="amount">{{ product.title }}</span>
+                                    </td>
+                                </tr>
+                            {% endwith %}
+                        {% endfor %}
+                       
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    <button type="button" class="btn">Update Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

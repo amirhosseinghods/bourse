@@ -28,7 +28,11 @@
                     </div>
                     
                     <div class="m-t-20">
-                        <button class="btn btn-lg" type="button"><i class="icon-shopping-cart"></i> اضافه کردن به سبد خرید</button>
+                        <form action="{% url 'cart:cart_add' product.id %}" method="POST">
+                            {% csrf_token %}
+                            {{ cart_add_product_form }}
+                            <button class="btn btn-lg " type="submit"><i class="icon-shopping-cart"></i> اضافه کردن به سبد خرید</button>
+                        </form> 
                     </div>
                 </div>
             </div>

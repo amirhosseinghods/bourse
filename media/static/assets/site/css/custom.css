@@ -9,56 +9,56 @@
 
 @font-face {
     font-family: ravi-black;
-    src: url(../../fonts/ravi/Black/Ravi08Black.eot);
-    src: url(../../Fonts/ravi/Black/Ravi08Black.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/Black/Ravi08Black.otf) format("opentype"), url(../../Fonts/ravi/Black/Ravi08Black.svg) format("svg"), url(../../Fonts/ravi/Black/Ravi08Black.ttf) format("truetype"), url(../../Fonts/ravi/Black/Ravi08Black.woff) format("woff"), url(../../Fonts/ravi/Black/Ravi08Black.woff2) format("woff2");
+    src: url(../Font/ravi/Black/Ravi08Black.eot);
+    src: url(../Font/ravi/Black/Ravi08Black.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/Black/Ravi08Black.otf) format("opentype"), url(../Font/ravi/Black/Ravi08Black.svg) format("svg"), url(../Font/ravi/Black/Ravi08Black.ttf) format("truetype"), url(../Font/ravi/Black/Ravi08Black.woff) format("woff"), url(../Font/ravi/Black/Ravi08Black.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-bold;
-    src: url(../../Fonts/ravi/Bold/Ravi06Bold.eot);
-    src: url(../../Fonts/ravi/Bold/Ravi06Bold.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/Bold/Ravi06Bold.otf) format("opentype"), url(../../Fonts/ravi/Bold/Ravi06Bold.svg) format("svg"), url(../../Fonts/ravi/Bold/Ravi06Bold.ttf) format("truetype"), url(../../Fonts/ravi/Bold/Ravi06Bold.woff) format("woff"), url(../../Fonts/ravi/Bold/Ravi06Bold.woff2) format("woff2");
+    src: url(../Font/ravi/Bold/Ravi06Bold.eot);
+    src: url(../Font/ravi/Bold/Ravi06Bold.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/Bold/Ravi06Bold.otf) format("opentype"), url(../Font/ravi/Bold/Ravi06Bold.svg) format("svg"), url(../Font/ravi/Bold/Ravi06Bold.ttf) format("truetype"), url(../Font/ravi/Bold/Ravi06Bold.woff) format("woff"), url(../Font/ravi/Bold/Ravi06Bold.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-extrabold;
-    src: url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.eot);
-    src: url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.otf) format("opentype"), url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.svg) format("svg"), url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.ttf) format("truetype"), url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.woff) format("woff"), url(../../Fonts/ravi/ExtraBold/Ravi07ExtraBold.woff2) format("woff2");
+    src: url(../Font/ravi/ExtraBold/Ravi07ExtraBold.eot);
+    src: url(../Font/ravi/ExtraBold/Ravi07ExtraBold.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/ExtraBold/Ravi07ExtraBold.otf) format("opentype"), url(../Font/ravi/ExtraBold/Ravi07ExtraBold.svg) format("svg"), url(../Font/ravi/ExtraBold/Ravi07ExtraBold.ttf) format("truetype"), url(../Font/ravi/ExtraBold/Ravi07ExtraBold.woff) format("woff"), url(../Font/ravi/ExtraBold/Ravi07ExtraBold.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-light;
-    src: url(../../Fonts/ravi/LightLightRavi02Light.eot);
-    src: url(../../Fonts/ravi/LightLightRavi02Light.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/LightLightRavi02Light.otf) format("opentype"), url(../../Fonts/ravi/LightLightRavi02Light.svg) format("svg"), url(../../Fonts/ravi/LightLightRavi02Light.ttf) format("truetype"), url(../../Fonts/ravi/LightLightRavi02Light.woff) format("woff"), url(../../Fonts/ravi/LightLightRavi02Light.woff2) format("woff2");
+    src: url(../Font/ravi/LightLightRavi02Light.eot);
+    src: url(../Font/ravi/LightLightRavi02Light.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/LightLightRavi02Light.otf) format("opentype"), url(../Font/ravi/LightLightRavi02Light.svg) format("svg"), url(../Font/ravi/LightLightRavi02Light.ttf) format("truetype"), url(../Font/ravi/LightLightRavi02Light.woff) format("woff"), url(../Font/ravi/LightLightRavi02Light.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-medium;
-    src: url(../../Fonts/ravi/Medium/Ravi04Medium.eot);
-    src: url(../../Fonts/ravi/Medium/Ravi04Medium.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/Medium/Ravi04Medium.otf) format("opentype"), url(../../Fonts/ravi/Medium/Ravi04Medium.svg) format("svg"), url(../../Fonts/ravi/Medium/Ravi04Medium.ttf) format("truetype"), url(../../Fonts/ravi/Medium/Ravi04Medium.woff) format("woff"), url(../../Fonts/ravi/Medium/Ravi04Medium.woff2) format("woff2");
+    src: url(../Font/ravi/Medium/Ravi04Medium.eot);
+    src: url(../Font/ravi/Medium/Ravi04Medium.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/Medium/Ravi04Medium.otf) format("opentype"), url(../Font/ravi/Medium/Ravi04Medium.svg) format("svg"), url(../Font/ravi/Medium/Ravi04Medium.ttf) format("truetype"), url(../Font/ravi/Medium/Ravi04Medium.woff) format("woff"), url(../Font/ravi/Medium/Ravi04Medium.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-semibold;
-    src: url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.eot);
-    src: url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.otf) format("opentype"), url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.svg) format("svg"), url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.ttf) format("truetype"), url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.woff) format("woff"), url(../../Fonts/ravi/SemiBold/Ravi05SemiBold.woff2) format("woff2");
+    src: url(../Font/ravi/SemiBold/Ravi05SemiBold.eot);
+    src: url(../Font/ravi/SemiBold/Ravi05SemiBold.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/SemiBold/Ravi05SemiBold.otf) format("opentype"), url(../Font/ravi/SemiBold/Ravi05SemiBold.svg) format("svg"), url(../Font/ravi/SemiBold/Ravi05SemiBold.ttf) format("truetype"), url(../Font/ravi/SemiBold/Ravi05SemiBold.woff) format("woff"), url(../Font/ravi/SemiBold/Ravi05SemiBold.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: ravi-thin;
-    src: url(../../Fonts/ravi/Thin/Ravi01Thin.eot);
-    src: url(../../Fonts/ravi/Thin/Ravi01Thin.eot?#iefix) format("embedded-opentype"), url(../../Fonts/ravi/Thin/Ravi01Thin.otf) format("opentype"), url(../../Fonts/ravi/Thin/Ravi01Thin.svg) format("svg"), url(../../Fonts/ravi/Thin/Ravi01Thin.ttf) format("truetype"), url(../../Fonts/ravi/Thin/Ravi01Thin.woff) format("woff"), url(../../Fonts/ravi/Thin/Ravi01Thin.woff2) format("woff2");
+    src: url(../Font/ravi/Thin/Ravi01Thin.eot);
+    src: url(../Font/ravi/Thin/Ravi01Thin.eot?#iefix) format("embedded-opentype"), url(../Font/ravi/Thin/Ravi01Thin.otf) format("opentype"), url(../Font/ravi/Thin/Ravi01Thin.svg) format("svg"), url(../Font/ravi/Thin/Ravi01Thin.ttf) format("truetype"), url(../Font/ravi/Thin/Ravi01Thin.woff) format("woff"), url(../Font/ravi/Thin/Ravi01Thin.woff2) format("woff2");
     font-weight: 400;
     font-style: normal
 }

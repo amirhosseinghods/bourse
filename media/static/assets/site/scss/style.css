@@ -5,6 +5,7 @@
    Google Fonts
 -----------------------------------------------------------------*/
 @import 'https://fonts.googleapis.com/css?family=Poppins:100,200,400,500,600,700,800|Nunito:300,400,600,700,800';
+@import "custom.css";
 /*  Base */
 /***********************************************************************
 **														              **
@@ -4570,9 +4571,7 @@ Portfolio
 .grid-item .portfolio-description a:hover i,
 .grid-item .grid-description a:hover i,
 .grid-item .portfolio-links a:hover i {
-  background-color: #6658d1;
-  color: #ffffff;
-  border: 1px solid #6658d1;
+  color: #6658d1;
 }
 .portfolio-item .portfolio-description span,
 .portfolio-item .portfolio-description p,
@@ -5463,6 +5462,7 @@ Portfolio
 /* ----------------------------------------------------------------
 	Blog
 -----------------------------------------------------------------*/
+@import "cu";
 .post-item {
   float: left;
   width: 100%;
@@ -5474,11 +5474,10 @@ Portfolio
 .post-item .post-item-wrap {
   background-color: #ffffff;
   position: relative;
-  height: 460px;
 }
 .post-item img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto!important;
 }
 .post-item .post-image,
 .post-item .post-slider,
@@ -5671,6 +5670,7 @@ Portfolio
   color: #676767;
 }
 .single-post .post-item .post-item-description p {
+  font-family:"ravi-light" !important;
   font-size: 16px;
 }
 .single-post .post-item .post-item-description > h2,
@@ -10306,6 +10306,10 @@ div.dataTables_wrapper div.dataTables_length select {
 .fullscreen .container-fullscreen .text-middle {
   align-self: center;
   margin: 0 auto;
+}
+
+.page-content .post-item-description p span {
+  color: red !important;
 }
 
 /*ray chat*/

@@ -5659,7 +5659,7 @@ Portfolio
   /*padding: 0 0 20px 0;*/
 }
 .single-post .post-item img {
-  width: 100%;
+  width: 100% !important;
   height: auto;
 }
 .single-post .post-item .post-item-description {
@@ -10303,6 +10303,24 @@ div.dataTables_wrapper div.dataTables_length select {
 .fullscreen .container-fullscreen .text-middle {
   align-self: center;
   margin: 0 auto;
+}
+
+.single-post .post-item img {
+  width: 100% !important;
+}
+.single-post .post-item .post-item-description span {
+  font-family: "ravi-light", sans-serif !important;
+}
+.single-post .post-item .post-item-description span strong span {
+  font-family: "ravi-medium", sans-serif !important;
+  font-size: 18px !important;
+}
+.single-post .post-item .post-item-description p {
+  font-family: "ravi-light", sans-serif !important;
+  color: black !important;
+}
+.single-post .post-item .post-item-description p img {
+  width: 100% !important;
 }
 
 /*ray chat*/

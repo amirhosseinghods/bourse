@@ -41,7 +41,7 @@ class AnalyzePost(models.Model):
         super(AnalyzePost, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('pages:post', kwargs={'slug': self.slug})
+        return reverse('analyze:post', kwargs={'slug': self.slug})
 
 class AnalyzeCategory(models.Model):
     """Model definition for AnalyzeCategory."""

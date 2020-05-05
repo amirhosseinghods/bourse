@@ -10897,7 +10897,7 @@ input.dates:after {
   font-size: 18px;
   content: "";
   font-family: "inspiro-icons";
-  right: 0;
+  left: 0;
   position: absolute;
 }
 .accordion .ac-item .ac-title > i {

@@ -12,17 +12,27 @@
 
     </div>
 </section>
-<!-- end: Page title -->
-<div class="accordion">
-    {% for market in primarymarkets %}
-        <div class="ac-item">
-            <h5 class="ac-title">{{ market.title }} |  {{ market.abbrivation }}</h5>
-            <div class="ac-content" style="display: none;">
-                {{ market.content }}
+
+<section class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content col-lg-9">
+                <div class="accordion" style="direction: rtl; text-align: right;">
+                    {% for market in primarymarkets %}
+                        <div class="ac-item">
+                            <h5 class="ac-title">{{ market.title }} |  {{ market.abbrivation }}</h5>
+                            <div class="ac-content" style="display: none;">
+                                {{ market.content|safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
             </div>
         </div>
-    {% endfor %}
-    
-</div>
+    </div>
+</section>
+
+
 
 {% endblock %}

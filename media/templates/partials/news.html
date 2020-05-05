@@ -23,19 +23,21 @@
 
         <div id="portfolio" class="grid-layout portfolio-3-columns rtl" data-margin="20">
             {% for post in news_posts %}
-                <div class="portfolio-item grey-bg no-overlay {{ post.category.slug }}">
-                    <div class="portfolio-item-wrap">
-                        <div class="portfolio-image">
-                            <a href="{% url 'news:post' slug=post.slug %}"><img src="{{ post.picture.url }}" alt="{{ post.title }}"></a>
-                        </div>
-                        <div class="portfolio-description" style="height: 200px;">
-                            <a href="{% url 'news:post' slug=post.slug %}">
-                                <h3>{{ post.title }}</h3>
-                                <p style="font-family: ravi-light;">{{ post.summary | safe }}</p>
-                            </a>
+                {% if post.important %}
+                    <div class="portfolio-item grey-bg no-overlay {{ post.category.slug }}">
+                        <div class="portfolio-item-wrap">
+                            <div class="portfolio-image">
+                                <a href="{% url 'news:post' slug=post.slug %}"><img src="{{ post.picture.url }}" alt="{{ post.title }}"></a>
+                            </div>
+                            <div class="portfolio-description" style="height: 200px;">
+                                <a href="{% url 'news:post' slug=post.slug %}">
+                                    <h3>{{ post.title }}</h3>
+                                    <p style="font-family: ravi-light;">{{ post.summary | safe }}</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
         </div>
 

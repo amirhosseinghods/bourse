@@ -9,7 +9,7 @@ from .models import NewsComment
 class NewsPostAdmin(admin.ModelAdmin):
     '''Admin View for News Post'''
 
-    list_display = ('slug', 'author', 'important', 'category', 'created')
+    list_display = ('slug', 'author', 'is_shown', 'important', 'category', 'created')
     list_filter = ('author', 'category',)
     filter_horizontal = ('tags',)
     search_fields = ('title',)

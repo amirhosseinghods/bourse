@@ -18,13 +18,15 @@
         <div class="row">
             <div class="content col-lg-9">
                 <div class="accordion" style="direction: rtl; text-align: right;">
-                    {% for market in primarymarkets %}
-                        <div class="ac-item">
-                            <h5 class="ac-title">{{ market.title }} |  {{ market.abbrivation }}</h5>
-                            <div class="ac-content" style="display: none;">
-                                {{ market.content|safe }}
+                    {% for market in primarymarkets %}\
+                        {% if not market.archive %}
+                            <div class="ac-item">
+                                <h5 class="ac-title">{{ market.title }} |  {{ market.abbrivation }}</h5>
+                                <div class="ac-content" style="display: none;">
+                                    {{ market.content|safe }}
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                     
                 </div>

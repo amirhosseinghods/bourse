@@ -7,6 +7,7 @@ class PrimaryMarketListView(ListView):
     model = PrimaryMarket
     template_name = "pages/primarymarkets.html"
     context_object_name = 'primarymarkets'
+     page_name = _('عرضه اولیه')
 
 
 

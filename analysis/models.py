@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 class AnalyzePost(models.Model):
-    """Model definition for AnalyzePosts."""
 
     title = models.CharField(_("Title"), db_index=True, max_length=120)
     slug = models.SlugField(_("Slug"), db_index=True, max_length=140, editable = False, allow_unicode=True)
@@ -29,7 +28,6 @@ class AnalyzePost(models.Model):
     modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     class Meta:
-        """Meta definition for Analyze Post."""
         verbose_name = _('Analyze Post')
         verbose_name_plural = _('Analyze Posts')
         index_together = (('id', 'slug'))

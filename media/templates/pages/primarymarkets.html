@@ -1,0 +1,28 @@
+{% extends 'shared/_site.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Page title -->
+<section id="page-title" data-bg-parallax="{% static 'assets/site/images/main/contact-us2.jpg' %}"
+    style="height: 600px;">
+    <div class="container">
+        <div class="page-title">
+            <span>something</span>
+        </div>
+
+    </div>
+</section>
+<!-- end: Page title -->
+<div class="accordion">
+    {% for market in primarymarkets %}
+        <div class="ac-item">
+            <h5 class="ac-title">{{ market.title }} |  {{ market.abbrivation }}</h5>
+            <div class="ac-content" style="display: none;">
+                {{ market.content }}
+            </div>
+        </div>
+    {% endfor %}
+    
+</div>
+
+{% endblock %}

@@ -33,6 +33,7 @@ urlpatterns = [
     re_path(r'^dashboard/', include("dashboard.urls")),
     re_path(r'^tutorials/', include('shop.urls')),
     re_path(r'^cart/', include('cart.urls')),
+    re_path(r'^primarymarket/', include('primarymarket.urls')),
     re_path(r'^feeds/', include('feeds.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 

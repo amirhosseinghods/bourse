@@ -20,6 +20,7 @@ INSTALLED_APPS.append('widget_tweaks')
 # ############## #
 
 INSTALLED_APPS.append('pages')
+INSTALLED_APPS.append('primarymarket')
 INSTALLED_APPS.append('blog')
 INSTALLED_APPS.append('news')
 INSTALLED_APPS.append('analysis')

@@ -15,6 +15,9 @@ class NewsPost(models.Model):
 
     source = models.URLField(_("Web Link Source"), max_length=200, null = True, blank = True)
     
+    important = models.BooleanField(_("Important news"), default = False)
+    is_shown = models.BooleanField(_("Show this news"), default = False)
+
     height_field = models.SmallIntegerField(_("Height Field"), editable = False)
     width_field = models.SmallIntegerField(_("Width Field"), editable = False)
     picture = models.ImageField(_("Picture"), upload_to='site/blog', height_field='height_field', width_field='width_field', max_length=254, help_text = _('picture size must be: 525x350'))

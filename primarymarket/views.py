@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import PrimaryMarket
-
+from django.utils.translation import ugettext_lazy as _
 
 class PrimaryMarketListView(ListView):
     model = PrimaryMarket

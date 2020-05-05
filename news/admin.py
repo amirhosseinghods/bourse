@@ -9,11 +9,12 @@ from .models import NewsComment
 class NewsPostAdmin(admin.ModelAdmin):
     '''Admin View for News Post'''
 
-    list_display = ('slug', 'author', 'category', 'created')
+    list_display = ('slug', 'author', 'important', 'category', 'created')
     list_filter = ('author', 'category',)
     filter_horizontal = ('tags',)
     search_fields = ('title',)
     ordering = ('-created',)
+    editable_fields = ('is_shown', 'important', 'category')
 
     def get_form(self, request, *args, **kwargs):
         form = super(NewsPostAdmin, self).get_form(request, *args, **kwargs)

@@ -14,6 +14,9 @@ class AnalyzePost(models.Model):
     slug = models.SlugField(_("Slug"), db_index=True, max_length=140, editable = False, allow_unicode=True)
     summary = models.CharField(max_length=254)
     content = RichTextUploadingField(_("Content"))
+
+    important = models.BooleanField(_("Important post"), default = False)
+    is_shown = models.BooleanField(_("Show this post"), default = False)
     
     height_field = models.SmallIntegerField(_("Height Field"), editable = False)
     width_field = models.SmallIntegerField(_("Width Field"), editable = False)

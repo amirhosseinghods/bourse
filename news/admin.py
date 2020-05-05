@@ -14,8 +14,7 @@ class NewsPostAdmin(admin.ModelAdmin):
     filter_horizontal = ('tags',)
     search_fields = ('title',)
     ordering = ('-created',)
-    editable_fields = ('is_shown', 'important', 'category')
-
+    list_editable = ('is_shown', 'important', 'category')
     def get_form(self, request, *args, **kwargs):
         form = super(NewsPostAdmin, self).get_form(request, *args, **kwargs)
         form.base_fields['author'].initial = request.user

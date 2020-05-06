@@ -24,7 +24,7 @@ schema_view = get_swagger_view(title='Bourse API Documentation')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('api.v1.urls')),
+    path('api/', include('api.v1.urls')),
     re_path(r'^', include('pages.urls')),
     re_path(r'^news/', include('news.urls')),
     re_path(r'^analyze/', include('analysis.urls')),
@@ -36,7 +36,4 @@ urlpatterns = [
     re_path(r'^primarymarket/', include('primarymarket.urls')),
     re_path(r'^feeds/', include('feeds.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
-
-    re_path(r'^api-auth/', include('rest_framework.urls')),
-    re_path(r'^api-documentation/', schema_view),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

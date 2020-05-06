@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 class AnalyzePost(models.Model):
-
     title = models.CharField(_("Title"), db_index=True, max_length=120)
     slug = models.SlugField(_("Slug"), db_index=True, max_length=140, editable = False, allow_unicode=True)
     summary = models.CharField(max_length=254)
@@ -45,8 +44,6 @@ class AnalyzePost(models.Model):
         return reverse('analyze:post', kwargs={'slug': self.slug})
 
 class AnalyzeCategory(models.Model):
-    """Model definition for AnalyzeCategory."""
-
     title = models.CharField(max_length=120)
     slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
@@ -54,8 +51,9 @@ class AnalyzeCategory(models.Model):
     modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     class Meta:
-        verbose_name = 'Analyze Category'
-        verbose_name_plural = 'Analyze Categories'
+        verbose_name = _('Analyze Category')
+        verbose_name_plural = _('Analyze Categories')
+        ordering = ('-created',)
 
     def __str__(self):
         return self.title
@@ -65,8 +63,6 @@ class AnalyzeCategory(models.Model):
         super(AnalyzeCategory, self).save(*args, **kwargs)
 
 class AnalyzeTag(models.Model):
-    """Model definition for Tag."""
-
     title = models.CharField(max_length=120)
     slug = models.SlugField(_("Slug"), max_length=140, editable = False)
 
@@ -74,8 +70,8 @@ class AnalyzeTag(models.Model):
     modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     class Meta:
-        verbose_name = 'Analyze Tag'
-        verbose_name_plural = 'Analyze Tags'
+        verbose_name = _('Analyze Tag')
+        verbose_name_plural = _('Analyze Tags')
 
     def __str__(self):
         return self.title
@@ -85,8 +81,6 @@ class AnalyzeTag(models.Model):
         super(AnalyzeTag, self).save(*args, **kwargs)
 
 class AnalyzeComment(models.Model):
-    """Model definition for Analyze Comment."""
-
     text = models.CharField(max_length=254)
     post = models.ForeignKey(AnalyzePost, verbose_name=_("AnalyzePost"), related_name = 'ana_comments', on_delete=models.CASCADE)
     by = models.ForeignKey(User, verbose_name=_("By user"), related_name = 'ana_comments', on_delete=models.PROTECT)
@@ -96,8 +90,8 @@ class AnalyzeComment(models.Model):
     modified = models.DateTimeField(_("Modified"), auto_now=True)
 
     class Meta:
-        verbose_name = 'Analyze Comment'
-        verbose_name_plural = 'Analyze Comments'
+        verbose_name = _('Analyze Comment')
+        verbose_name_plural = _('Analyze Comments')
 
     def __str__(self):
         return self.text

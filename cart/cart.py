@@ -12,15 +12,18 @@ class Cart(object):
         
         self.cart = cart
         
-    def add(self, product, product_count = 1, update_count = False):
+    def add(self, product, quantity = 1, update_count = False):
         product_id = str(product.id)
         if product.id not in self.cart:
-            self.cart[product_id] = {'product_count':0, 'price': str(product.price)}
+            self.cart[product_id] = {
+                'quantity':0, 
+                'price': str(product.price)
+                }
         
         if update_count:
-            self.cart[product_id]['product_count'] = product_count
+            self.cart[product_id]['quantity'] = quantity
         else:
-            self.cart[product_id]['product_count'] += product_count
+            self.cart[product_id]['quantity'] += quantity
         self.save()
         
     def save(self):

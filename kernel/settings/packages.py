@@ -37,9 +37,8 @@ LOGIN_REDIRECT_USER = "/signin/"
 LOGIN_URL = "/signin/"
 SITE_ID = 1
 CART_SESSION_ID = 'cart'
-CORS_ORIGIN_WHITELIST=(
-    'localhost:3000',
-    'smartbourse.com:9002'
+CORS_ORIGIN_WHITELIST = (
+    'http://smartbourse.com',
 )
 
 

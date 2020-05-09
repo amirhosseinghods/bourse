@@ -4,14 +4,16 @@ from decimal import Decimal
 
 class Cart(object):
     def __init__(self, request, *args, **kwargs):
+        import pdb; pdb.set_trace()
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
         
         if not cart:
-            cart = self.session[settings.CART_SESSION_ID] = {}
+            self.session[settings.CART_SESSION_ID] = {}
+            cart = self.session[settings.CART_SESSION_ID]
         
         self.cart = cart
-        
+
     def add(self, product, quantity = 1, update_count = False):
         product_id = str(product.id)
         if product.id not in self.cart:
@@ -19,7 +21,7 @@ class Cart(object):
                 'quantity':0, 
                 'price': str(product.price)
                 }
-        
+
         if update_count:
             self.cart[product_id]['quantity'] = quantity
         else:

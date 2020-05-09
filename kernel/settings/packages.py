@@ -14,6 +14,7 @@ INSTALLED_APPS.append('django_celery_beat')
 INSTALLED_APPS.append('ckeditor')
 INSTALLED_APPS.append('ckeditor_uploader')
 INSTALLED_APPS.append('widget_tweaks')
+INSTALLED_APPS.append('corsheaders')
 
 # ############## #
 # CUSTOM PROJECT #
@@ -36,6 +37,10 @@ LOGIN_REDIRECT_USER = "/signin/"
 LOGIN_URL = "/signin/"
 SITE_ID = 1
 CART_SESSION_ID = 'cart'
+CORS_ORIGIN_WHITELIST=(
+    'localhost:3000',
+    'smartbourse.com:9002'
+)
 
 
 # ###################### #

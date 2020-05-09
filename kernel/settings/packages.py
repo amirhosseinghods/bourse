@@ -39,6 +39,7 @@ SITE_ID = 1
 CART_SESSION_ID = 'cart'
 CORS_ORIGIN_WHITELIST = (
     'http://smartbourse.com',
+    'http://localhost:3000'
 )
 
 

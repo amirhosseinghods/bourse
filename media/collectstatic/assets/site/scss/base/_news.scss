@@ -1,0 +1,32 @@
+.single-post{
+
+    .post-item{
+        img{
+            width:100% !important;
+        }
+
+        .post-item-description{
+            span {
+                font-family: $font-paragraph !important;
+                strong{
+
+                    span{
+                        font-family:$font-base !important;
+                        font-size: 18px!important;
+                    }
+
+                }
+            }
+            p{
+                font-family: $font-paragraph !important;
+                color: black!important;
+                img{
+                    width:100% !important;
+                }
+        
+            }
+        }
+
+    }
+
+}

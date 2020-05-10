@@ -23,7 +23,7 @@ from api.v1.analysis.serializers import AnalyzeSerializer
 class AnalyzePostViewSet(viewsets.ModelViewSet):
 
     queryset = AnalyzePost.objects.all()
-
+    lookup_field = 'slug'
     serializer_class = AnalyzeSerializer
 
     permission_classes = [

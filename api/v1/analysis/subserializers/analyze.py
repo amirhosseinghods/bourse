@@ -10,3 +10,7 @@ class AnalyzeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AnalyzePost
         fields = ('url', 'title', 'slug', 'summary', 'content', 'important', 'is_shown', 'height_field', 'width_field', 'picture', 'category',)
+        lookup_field = 'slug'
+        extra_kwargs = {
+            'url': {'lookup_field': 'slug'}
+        }
